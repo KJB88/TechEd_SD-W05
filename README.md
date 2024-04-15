@@ -24,12 +24,19 @@ Kev B. -
     </li>
     </ul>
 <section>
-<h2>Project Outline</h2>
+<h2>📋 Project Outline</h2>
 <p>As a group of fine, fine gentlemen; design and build a web application that utilises a snazzy and responsive, yet accessible, front-end webpage. The back-end must consider of a node.js server and SQLite database that can handle requests (GET, POST, DEL, PUT) from the client to insert, update or remove records from the database.</p>
   <p><b>All requirements and stretch goals are in-progress.</b></p>
 </section>
 <section>
-<h2>Requirements</h2>
+  <h2>🙍‍♂️ User Stories</h2>
+  <h3>As a User...</h3>
+  <ul>
+    <li>TODO</li>
+  </ul>
+  </section>
+  <section>
+<h2>👷 Requirements</h2>
 <ul>
 <li><b>Design</b>: Demonstrate proper design practices by creating wireframes, data flow and database schema. The application must include both client-side and server-side code.</li>
   <li><b>Front-End Dev</b>: Develop a user interface with HTML and CSS, focusing on responsive, accessible and intuitive design. Implement async/await and the Fetch API for non-blocking database operations and API calls.</li>
@@ -41,25 +48,44 @@ Kev B. -
 </ul>
 </section>
 <section>
-<h2>Stretch Goals</h2>
+<h2>🥅 Stretch Goals</h2>
 <ul>
 <li>TODO - <b>TODO</b></li>
 </ul>
 </section>
+  <section>
+    <h2>📈 Project Structure</h2>
+    <h3>Client</h3>
+    <ul>
+      <li>TODO:</li>
+    </ul>
+        <h3>Server</h3>
+    <ul>
+      <li>TODO:</li>
+    </ul>
+        <h3>Database</h3>
+    <ul>
+      <li>TODO:</li>
+    </ul>
+        <h3>Other</h3>
+    <ul>
+      <li>TODO:</li>
+    </ul>
+      </section>
 <section>
-<h2>Implementation (of Requirements)</h2>
+<h2>✔️ Implementation (of Requirements)</h2>
   <h3>TODO</h3>
   <p>TODO</p>
 </section>
 <section>
-  <h2>Implementation (of Stretch Goals)</h2>
+  <h2>➕ Implementation (of Stretch Goals)</h2>
   <h3>TODO</h3>
   <p>
 TODO
   </p>
 </section>
 <section>
-  <h2>Honorary Mentions</h2>
+  <h2>🏆 Honorary Mentions</h2>
   <h3>TODO</h3>
   TODO
 </section>
