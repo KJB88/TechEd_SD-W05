@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>:mortar_board: Tech Educators' SWD Bootcamp :mortar_board:<br/>:mortar_board: Week TODO Assessment :mortar_board:</h1>
-  <p>  Repository for coursework for TechEd Software Development Bootcamp - Week TODO.</p>
+  <h1>:mortar_board: Tech Educators' SWD Bootcamp :mortar_board:<br/>:mortar_board: Week 05 Assessment :mortar_board:</h1>
+  <p>  Repository for coursework for TechEd Software Development Bootcamp - Week 05</p>
   
   </div>
   <ul>
