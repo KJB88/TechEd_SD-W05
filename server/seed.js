@@ -21,10 +21,10 @@ CREATE TABLE IF NOT EXISTS reviews
 (
   id INTEGER PRIMARY KEY,
   content TEXT NOT NULL,
-  userID INTEGER NOT NULL,
   tvID INTEGER NOT NULL,
-  FOREIGN KEY (userID) REFERENCES users (id) ON DELETE CASCADE,
+  userID INTEGER NOT NULL,
   FOREIGN KEY (tvID) REFERENCES tv_shows (id) ON DELETE CASCADE
+  FOREIGN KEY (userID) REFERENCES users (id) ON DELETE CASCADE,
 )`);
 
 const insertUsers = db.prepare(`INSERT INTO users (name) VALUES (?)`);
