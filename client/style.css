@@ -1,0 +1,57 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    margin-right: 20px; /* Adjust as needed */
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+
+
+.gallery-container {
+    margin-bottom: 40px;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+}
+
+.gallery-images {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.gallery-images img {
+    width: 200px; 
+    height: 150px; 
+    object-fit: cover; 
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.prev-btn,
+.next-btn {
+    background: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: #f0f0f0;
+}
