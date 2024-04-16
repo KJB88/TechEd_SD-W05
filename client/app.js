@@ -1,4 +1,27 @@
-document.querySelectorAll('.gallery').forEach(gallery => {
+document.addEventListener('DOMContentLoaded', function() {
+    const searchForm = document.getElementById('search-form');
+    const searchBar = document.getElementById('search-bar');
+  
+    searchForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+  
+      // Get the search query
+      const query = searchBar.value.trim();
+  
+      // Make a request to the server
+      fetch(`/search?query=${query}`)
+        .then(response => response.json())
+        .then(data => {
+          // Process the response data
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  });
+
+  document.querySelectorAll('.gallery').forEach(gallery => {
     const imagesContainer = gallery.querySelector('.gallery-images');
     const prevBtn = gallery.querySelector('.prev-btn');
     const nextBtn = gallery.querySelector('.next-btn');
