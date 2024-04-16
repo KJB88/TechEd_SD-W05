@@ -6,25 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="Stylesheet" href="style.css">
 
     <!-- JS -->
-    <script src="./assets/js/app.js" defer type="module"></script>
+    <script src="./app.js" defer type="module"></script>
 
     <title>Document</title>
 </head>
-
+// https://www.omdbapi.com/
 <body>
     <!-- HEADER -->
     <header>
+        <div id="logo">
+            
+            <img src="./public/logo.png" alt="TVReviewRiot Logo">
+        </div>
+        <h1 id="SG">TVReviewRiot</h1>
         <nav>
-
+            <a id="a1" href="#Home">Home</a>
+            <a id="a2" href="#About">About</a>
+            <a id="a3" href="#Latest Releases">Latest Release</a>
+            <a id="a4" href="#Recent Reviews">Recent Reviews</a>
+            <a id="a5" href="#Live Rankings">Live Rankings</a>
         </nav>
     </header>
-
     <!-- MAIN -->
     <main>
-
+        <div class="Recently Added">
+            <h2>Recently Added </h2>
+            <div class="RA">
+                <button class="prev-btn">&lt;</button>
+                <div class="gallery-images">
+                    
+                    <img src="./public/fallout.jpg" alt="Image 1">
+                    <img src="./public/lou.jpg" alt="Image 2">
+                    <img src="./public/3bp.jpg" alt="Image 3">
+                </div>
+                <button class="next-btn">&gt;</button>
+            </div>
+        </div>
+        
+        <div class="Recently Reviews">
+            <h2>Recent Reviews</h2>
+            <div class="gallery">
+                <button class="prev-btn">&lt;</button>
+                <div class="gallery-images">
+                    
+                    <img src="3bp.jpg" alt="Image 4">
+                    <img src="fallout.jpg" alt="Image 5">
+                    <img src="lou.jpg" alt="Image 6">
+                </div>
+                <button class="next-btn">&gt;</button>
+            </div>
+        </div>
+        
+        <div class="Live Rankings">
+            <h2>Live Rankings</h2>
+            <div class="LR">
+                <button class="prev-btn">&lt;</button>
+                <div class="gallery-images">
+                    
+                    <img src="fallout.jpg" alt="Image 7">
+                    <img src="3bp.jpg" alt="Image 8">
+                    <img src="lou.jpg" alt="Image 9">
+                </div>
+                <button class="next-btn">&gt;</button>
+            </div>
+        </div>
     </main>
 
     <!-- FOOTER -->
