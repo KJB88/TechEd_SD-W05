@@ -4,8 +4,17 @@ header {
     align-items: center;
 }
 
+body {
+    background-image: linear-gradient(to bottom, #fbbc05, #f8d572); /* Yellow gradient from top to bottom */
+}
+
 #logo {
     margin-right: 20px; /* Adjust as needed */
+    width: 10px; /* Adjust the width to your desired size */
+    height: 10px; /* Allow the height to adjust proportionally */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 nav {
