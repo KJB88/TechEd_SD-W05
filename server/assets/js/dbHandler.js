@@ -56,7 +56,7 @@ const insertReview = db.prepare(
 
 // TV Shows
 const insertTVShows = db.prepare(
-  `INSERT OR IGNORE INTO tv_shows (name, desc, likes) VALUES (?, ?, ?)`
+  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, imgID) VALUES (?, ?, ?, ?)`
 );
 
 // #endregion INSERT
@@ -213,8 +213,8 @@ export function addReview(reviewContent, tvShowID, userID) {
 // TV Shows
 /* Adds a TV Show to the database
 Returns all TV Shows. */
-export function addTVShow(showName, description, likes) {
-  insertTVShows.run(showName, description, likes);
+export function addTVShow(showName, description, likes, imgID) {
+  insertTVShows.run(showName, description, likes, imgID);
   return getAllTVShows();
 }
 
@@ -352,7 +352,7 @@ function testInserts() {
   console.log(addUser("Sara"));
   console.log(addReview("This is the best show that ever existed!", 1, 1));
   console.log(
-    addTVShow("24", "How does he manage to do all this in 24 hours?", 0)
+    addTVShow("24", "How does he manage to do all this in 24 hours?", 0, 1)
   );
 }
 

@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS tv_shows
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
     desc TEXT NOT NULL,
-    likes INTEGER NOT NULL DEFAULT 0
+    likes INTEGER NOT NULL DEFAULT 0,
+    imgID INTEGER NOT NULL DEFAULT 0
 )`);
 
 db.exec(`
@@ -29,10 +30,10 @@ CREATE TABLE IF NOT EXISTS reviews
 )`);
 
 const insertTVShows = db.prepare(
-  `INSERT INTO tv_shows (name, desc, likes) VALUES (?, ?, ?)`
+  `INSERT INTO tv_shows (name, desc, likes, imgID) VALUES (?, ?, ?, ?)`
 );
-insertTVShows.run("Firefly", "Wild West - but in space!", 0);
-insertTVShows.run("Scrubs", "Doctors doing funny doctor stuff.", 0);
+insertTVShows.run("Firefly", "Wild West - but in space!", 0, 1);
+insertTVShows.run("Scrubs", "Doctors doing funny doctor stuff.", 0, 2);
 
 const insertUsers = db.prepare(`INSERT INTO users (name) VALUES (?)`);
 insertUsers.run("Kev");
