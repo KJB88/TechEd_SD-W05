@@ -1,5 +1,6 @@
 import express, { request, response } from "express";
 import cors from "cors";
+import { getUserByID } from "./assets/js/dbHandler.js";
 
 const app = express();
 app.use(express.json());
@@ -14,13 +15,13 @@ app.listen(8080, function () {
 });
 
 app.post("/add/user", (request, response) => {
-  console.log(request.body);
+  console.log(request.body.name);
   response.json(request.body);
 });
 
-app.get("/all/users", (request, response) => {
-  response.json(request.body);
-  console.log(request.body);
+app.get("/get/user", (request, response) => {
+  response.json(getUserByID(request.body.id));
+  console.log(response.body);
 });
 
 /*app.post("/tvshow", (request, response) => {
