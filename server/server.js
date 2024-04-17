@@ -87,6 +87,7 @@ app.get("/tvshow/byID", (request, response) => {
 // Add new user
 app.post("/user", (request, response) => {
   console.log(`POST /user`);
+  console.log(request.body.name);
 
   response.json(addUser(request.body.name));
 });

@@ -1,110 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS -->
-    <link rel="Stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- JS -->
-    <script src="./app.js" defer type="module"></script>
+  <!-- Shut up Favicon -->
+  <link rel="shortcut icon" href="#">
 
-    <title>Document</title>
-  </head>
-  <!-- https://www.omdbapi.com/ -->
-  <body>
-    <!-- HEADER -->
-    <header>
-      <div id="logo">
-        <img src="logo.png" id="logo" alt="TVReviewRiot Logo" />
+  <!-- CSS -->
+  <link rel="Stylesheet" href="style.css" />
+
+  <!-- JS -->
+  <script src="./networkHandler.js" defer type="module"></script>
+  <script src="./app.js" defer type="module"></script>
+
+  <title>Document</title>
+</head>
+<!-- https://www.omdbapi.com/ -->
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>TEST OUTPUT</h1>
+    <div id="logo">
+      <img src="logo.png" id="logo" alt="TVReviewRiot Logo" />
+    </div>
+    <h1 class="h1">TVReviewRiot</h1>
+    <h2 class="h2">Everyones a Critic, Now its your turn</h2>
+
+    <nav>
+      <a id="a1" href="#Home">Home</a>
+      <a id="a2" href="./page">About</a>
+      <a id="a3" href="#Latest Releases">Latest Release</a>
+      <a id="a4" href="#Recent Reviews">Recent Reviews</a>
+      <a id="a5" href="#Live Rankings">Live Rankings</a>
+      <div class="search-container">
+        <input type="text" placeholder="Search..." id="search-bar">
+        <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
       </div>
-      <h1 class="h1">TVReviewRiot</h1>
-      <h2 class="h2">Everyones a Critic, Now its your turn</h2>
-      
-      <nav>
-        <a id="a1" href="#Home">Home</a>
-        <a id="a2" href="./page">About</a>
-        <a id="a3" href="#Latest Releases">Latest Release</a>
-        <a id="a4" href="#Recent Reviews">Recent Reviews</a>
-        <a id="a5" href="#Live Rankings">Live Rankings</a>
-        <div class="search-container">
-          <input type="text" placeholder="Search..." id="search-bar">
-          <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+    </nav>
+
+  </header>
+  <!-- MAIN -->
+  <main>
+
+    <!-- RECENTLY ADDED  -->
+    <section class="container-background">
+      <h1>Recently Added</h1>
+      <div class="display">
+        <button class="prev-btn">&lt;</button>
+        <div class="gallery-images">
+          <img src="aot.webp" alt="Attack on Titan" />
+          <img src="bluey.webp" alt="Bluey" />
+          <img src="cowboy.webp" alt="Image 6" />
+          <img src="Dr who.webp">
+          <img src="fallout.webp">
+          <img src="Red Dwarf.webp">
         </div>
-      </nav>
-      
-    </header>
-    <!-- MAIN -->
-    <main>
-
-      <section class="container-background">
-      
-        
-
-       
-      
-          <h1>Recently Added</h1>
-            <div class="display">
-              <button class="prev-btn">&lt;</button>
-              <div class="gallery-images">
-                <img src="aot.webp" alt="Attack on Titan" />
-                <img src="bluey.webp" alt="Bluey" />
-                <img src="cowboy.webp" alt="Image 6" />
-                <img src="Dr who.webp">
-                <img src="fallout.webp">
-                <img src="Red Dwarf.webp">
-              </div>
-              <button class="next-btn">&gt;</button>
-            </div>
-
-          
-
-          
-        </section>
-
-     <section class="container-background">
-
-          <div>
+        <button class="next-btn">&gt;</button>
+      </div>
+    </section>
+    <!-- RECENT REVIEWS  -->
+    <section class="container-background">
+      <div>
         <h1>Recent Reviews</h1>
-     
-
-           
-            <div class="display">
-              <button class="prev-btn">&lt;</button>
-              <div class="gallery-images">
-                <img href="page.html" src="3bp.jpg" alt="Image 4" />
-                <img src="fallout.jpg" alt="Image 5" />
-                <img src="lou.jpg" alt="Image 6" />
-              </div>
-              <button class="next-btn">&gt;</button>
-            </div>
+        <div class="display">
+          <button class="prev-btn">&lt;</button>
+          <div class="gallery-images">
+            <img href="page.html" src="3bp.jpg" alt="Image 4" />
+            <img src="fallout.jpg" alt="Image 5" />
+            <img src="lou.jpg" alt="Image 6" />
           </div>
+          <button class="next-btn">&gt;</button>
+        </div>
+      </div>
+    </section>
 
-
-        </section>
-
-        <section class="container-background">
-
-          
+    <!-- LIVE RANKINGS  -->
+    <section class="container-background">
       <div>
         <h2>Live Rankings</h2>
-        
-            <div class="display">
-              <button class="prev-btn">&lt;</button>
-              <div class="gallery-images">
-                <img src="3bp.jpg" alt="Image 4" />
-                <img src="fallout.jpg" alt="Image 5" />
-                <img src="lou.jpg" alt="Image 6" />
-              </div>
-              <button class="next-btn">&gt;</button>
-            </div>
-          </section>
+        <div class="display">
+          <button class="prev-btn">&lt;</button>
+          <div class="gallery-images">
+            <img src="3bp.jpg" alt="Image 4" />
+            <img src="fallout.jpg" alt="Image 5" />
+            <img src="lou.jpg" alt="Image 6" />
           </div>
-    </main>
-    <footer>
-      <p>&copy; 2024 TVReviewRiot. All rights reserved.</p>
-    </footer>
-    
-  </body>
+          <button class="next-btn">&gt;</button>
+        </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 TVReviewRiot. All rights reserved.</p>
+  </footer>
+
+</body>
+
 </html>

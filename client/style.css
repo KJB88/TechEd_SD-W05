@@ -11,15 +11,14 @@ header {
   align-items: center;
   background: linear-gradient(to bottom, #fbbc05, #f8d572);
   padding: 20px;
-  
-  text-align: centre;
+
+  text-align: center;
   flex-direction: column;
 }
 
 body {
   background-color: black;
 }
-
 
 .display {
   display: flex;
@@ -37,10 +36,8 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   margin-right: 0; /* Remove margin on smaller screens */
-    margin-bottom: 10px; /* Add some space between logo and headings */
+  margin-bottom: 10px; /* Add some space between logo and headings */
 }
-
-
 
 nav {
   display: flex;
