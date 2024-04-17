@@ -1,7 +1,8 @@
 * {
-  background-color: black;
-  color: white;
+  color: black;
   font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 
 header {
@@ -13,6 +14,12 @@ header {
   color: white;
 }
 
+
+body {
+  background-color: black;
+}
+
+
 /* body {
   /* /*
       background-image: linear-gradient(
@@ -20,9 +27,7 @@ header {
       #fbbc05,
       #f8d572
   ); Yellow gradient from top to bottom */
- */ */
 
-p {
   padding: 0; /* Remove padding */
   margin: 0; /* Optionally remove margin as well */
 }
@@ -33,7 +38,7 @@ p {
   justify-content: center; /* Align items horizontally to the center */
   align-items: center; /* Align items vertically to the center */
   text-align: center; /* Align text to the center */
-  margin-bottom: 40px; /* Add margin as needed */
+
 }
 
 #logo {
@@ -63,10 +68,6 @@ nav a {
   flex-direction: row;
 }
 
-.gallery-container {
-  margin-bottom: 40px;
-}
-
 .gallery {
   display: flex;
   align-items: center;
@@ -79,7 +80,7 @@ nav a {
 
 .gallery-images img {
   width: 200px;
-  height: 150px;
+  height: auto;
   object-fit: cover;
   margin-right: 10px;
   border-radius: 5px;
@@ -154,20 +155,9 @@ footer p {
 /* Add background images */
 
 
-.recently-Added {
-  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
-  background-size: cover;
-  background-position: center;
-}
+.container-background {
+  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash.webp");
 
-.Live-Rankings {
-  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
-  background-size: cover;
-  background-position: center;
-}
-
-.Recent-Reviews {
-  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
   background-size: cover;
   background-position: center;
 }
