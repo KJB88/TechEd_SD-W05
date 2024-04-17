@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="./app.js" defer type="module"></script>
     <title>TVReviewRiot - Review Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- HEADER -->
     <header>
-        <div id="logo">
-            <img src="./public/logo2.png" alt="TVReviewRiot Logo">
+      <div id="logo">
+        <img src="./public/logo2.png" id="logo" alt="TVReviewRiot Logo" />
+      </div>
+      <h1 id="SG">TVReviewRiot</h1>
+
+      <nav>
+        <a id="a1" href="#Home">Home</a>
+        <a id="a2" href="./page">About</a>
+        <a id="a3" href="#Latest Releases">Latest Release</a>
+        <a id="a4" href="#Recent Reviews">Recent Reviews</a>
+        <a id="a5" href="#Live Rankings">Live Rankings</a>
+        <div class="search-container">
+          <input type="text" placeholder="Search..." id="search-bar" />
+          <button type="submit" id="search-button">
+            <i class="fa fa-search"></i>
+          </button>
         </div>
-        <h1 id="SG">TVReviewRiot</h1>
-        <nav>
-            <a id="a1" href="#Home">Home</a>
-            <a id="a2" href="#About">About</a>
-            <a id="a3" href="#Latest Releases">Latest Release</a>
-            <a id="a4" href="#Recent Reviews">Recent Reviews</a>
-            <a id="a5" href="#Live Rankings">Live Rankings</a>
-            <div class="search-container">
-                <form id="search-form">
-                    <input type="text" placeholder="Search..." id="search-bar">
-                    <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-        </nav>
+      </nav>
+
+
     </header>
 
     <!-- MAIN -->
     <main>
-        <div class="show-picture">
-            <!-- Space for Show Picture -->
-            <img src="show_image.jpg" alt="Show Image">
-        </div>
 
-        <div class="review-section">
-            <!-- Space for Writing Reviews -->
-            <h2>Write a Review</h2>
-            <form id="review-form">
-                <textarea id="review-text" rows="4" placeholder="Write your review here..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+      <div class="show-picture">
+        <!-- Space for Show Picture -->
+        <img src="show_image.jpg" alt="Show Image" />
+      </div>
 
-        <div class="reviews">
-            <!-- Display Reviews -->
-            <h2>Reviews</h2>
-            <div id="reviews-container">
-                <!-- Reviews will be dynamically added here -->
-            </div>
+      <div class="review-section">
+        <!-- Space for Writing Reviews -->
+        <h2>Write a Review</h2>
+        <form id="review-form">
+          <textarea
+            id="review-text"
+            rows="4"
+            placeholder="Write your review here..."
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="reviews">
+        <!-- Display Reviews -->
+        <h2>Reviews</h2>
+        <div id="reviews-container">
+          <!-- Reviews will be dynamically added here -->
         </div>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 TVReviewRiot. All rights reserved.</p>
+      <p>&copy; 2024 TVReviewRiot. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
+
