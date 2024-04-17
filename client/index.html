@@ -21,28 +21,51 @@
       </div>
       <h1 id="SG">TVReviewRiot</h1>
       
-
-      <!--
       <nav>
         <a id="a1" href="#Home">Home</a>
-        <a id="a2" href="#About">About</a>
+        <a id="a2" href="./page">About</a>
         <a id="a3" href="#Latest Releases">Latest Release</a>
         <a id="a4" href="#Recent Reviews">Recent Reviews</a>
         <a id="a5" href="#Live Rankings">Live Rankings</a>
+        <div class="search-container">
+          <input type="text" placeholder="Search..." id="search-bar">
+          <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+        </div>
       </nav>
-      -->
+      
     </header>
     <!-- MAIN -->
     <main>
-      <div>
-        <h2>Recently Added</h2>
+      <section class="container-background">
+      
+        
        
-        <div>
+      
+          <h2>Recently Added</h2>
+            <div class="display">
+              <button class="prev-btn">&lt;</button>
+              <div class="gallery-images">
+                <img src="3bp.jpg" alt="Image 4" />
+                <img src="fallout.jpg" alt="Image 5" />
+                <img src="lou.jpg" alt="Image 6" />
+              </div>
+              <button class="next-btn">&gt;</button>
+            </div>
+          
+
+          
+        </section>
+
+     <section class="container-background">
+          <div>
+        <h2>Recent Reviews</h2>
+     
+
            
             <div class="display">
               <button class="prev-btn">&lt;</button>
               <div class="gallery-images">
-                <img src="3bp.jpg" alt="Image 4" />
+                <img href="page.html" src="3bp.jpg" alt="Image 4" />
                 <img src="fallout.jpg" alt="Image 5" />
                 <img src="lou.jpg" alt="Image 6" />
               </div>
@@ -50,21 +73,9 @@
             </div>
           </div>
 
-      <div>
-        <h2>Recent Reviews</h2>
-        <div>
-            
-            <div class="display">
-              <button class="prev-btn">&lt;</button>
-              <div class="gallery-images">
-                <img src="3bp.jpg" alt="Image 4" />
-                <img src="fallout.jpg" alt="Image 5" />
-                <img src="lou.jpg" alt="Image 6" />
-              </div>
-              <button class="next-btn">&gt;</button>
-            </div>
-          </div>
+        </section>
 
+        <section class="container-background">
       <div>
         <h2>Live Rankings</h2>
         
@@ -77,16 +88,12 @@
               </div>
               <button class="next-btn">&gt;</button>
             </div>
+          </section>
           </div>
     </main>
-
-    <!-- FOOTER -->
     <footer>
-        <div id="footer">
-            <p>Copyright The Four 2024</p>
-
-
-        </div>
+      <p>&copy; 2024 TVReviewRiot. All rights reserved.</p>
     </footer>
+    
   </body>
 </html>
