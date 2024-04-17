@@ -14,9 +14,11 @@ header {
   color: white;
 }
 
+
 body {
   background-color: black;
 }
+
 
 /* body {
   /* /*
@@ -25,7 +27,7 @@ body {
       #fbbc05,
       #f8d572
   ); Yellow gradient from top to bottom */
-*/ */ p {
+
   padding: 0; /* Remove padding */
   margin: 0; /* Optionally remove margin as well */
 }
@@ -36,6 +38,7 @@ body {
   justify-content: center; /* Align items horizontally to the center */
   align-items: center; /* Align items vertically to the center */
   text-align: center; /* Align text to the center */
+
 }
 
 #logo {
@@ -151,8 +154,10 @@ footer p {
 
 /* Add background images */
 
+
 .container-background {
   background-image: url("sincerely-media-vZpHj0FyhnY-unsplash.webp");
+
   background-size: cover;
   background-position: center;
 }
