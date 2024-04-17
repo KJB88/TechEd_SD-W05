@@ -1,3 +1,6 @@
+import Glide from "@glidejs/glide";
+
+new Glide(".glide").mount();
 /*
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('search-form');
