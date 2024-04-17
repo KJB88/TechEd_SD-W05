@@ -11,12 +11,15 @@ header {
   align-items: center;
   background: linear-gradient(to bottom, #fbbc05, #f8d572);
   padding: 20px;
-  color: white;
+  
+  text-align: centre;
+  flex-direction: column;
 }
 
 body {
   background-color: black;
 }
+
 
 .display {
   display: flex;
@@ -33,19 +36,34 @@ body {
   object-fit: cover; /* Maintain aspect ratio */
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-right: 0; /* Remove margin on smaller screens */
+    margin-bottom: 10px; /* Add some space between logo and headings */
 }
 
-#SG {
-  color: blue;
-  margin-right: 300px;
-}
+
 
 nav {
   display: flex;
+  margin-left: auto; /* Pushes the nav to the right */
+  margin-left: 0; /* Remove margin on smaller screens */
 }
 
 nav a {
   margin-right: 10px; /* Adjust as needed */
+}
+
+.h1 {
+  display: block; /* Ensures each heading takes full width */
+  text-align: center; /* Center the text */
+  margin: 10px 0; /* Add margin for spacing */
+  font-size: 30pt;
+}
+
+.h2 {
+  display: block; /* Ensures each heading takes full width */
+  text-align: center; /* Center the text */
+  margin: 10px 0; /* Add margin for spacing */
+  font-size: 15pt;
 }
 
 .display {
@@ -89,9 +107,13 @@ nav a {
   background: #f0f0f0;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center; /* Center elements vertically */
+    text-align: center; /* Center text */
+  }
 }
-
 footer {
   background: linear-gradient(to bottom, #fbbc05, #f8d572);
   padding: 20px;
@@ -125,7 +147,7 @@ footer p {
 
 /* Style the search button */
 #search-button {
-  background-color: #f8d572; /* Match your theme color */
+  background-color: #070500; /* Match your theme color */
   color: white;
   padding: 8px 12px;
   border: none;
