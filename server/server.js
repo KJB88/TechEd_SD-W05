@@ -1,6 +1,6 @@
 import express, { request, response } from "express";
 import cors from "cors";
-import { addUser, getReviewByID, getUserByID } from "./assets/js/dbHandler.js";
+import { addUser, getAllReviewsByUserID, getReviewByID, getUserByID } from "./assets/js/dbHandler.js";
 
 const app = express();
 app.use(express.json());
@@ -27,20 +27,36 @@ app.get("/get/review", (request, response) => {
   response.json(getReviewByID(request.body.id));
   console.log(getReview);
 });
-app.get("/all/reviews", (request, response) => {
+app.get("/get/all reviews by user", (request, response) =>{
   response.json(getAllReviewsByUserID(request.body.id));
-  console.log(allReview);
+  console.log(getAllReviewsByUserID);
 });
 
-app.get("/all/reviews", (request, response) => {
+app.post("/add/all reviews", (request, response) =>{
+    console.log(request.body.all reviews);
+    response.json(addUser(request.body.all reviews));
+  });
+
+app.get("/get/all reviews by tv show", (request, response) => {
+  response.json(app.get("/all/reviews", (request, response) => {
+    response.json(getAllReviewsByTVshowID(request.body.id));
+    console.log(allReviewByTVshow);
+  })
+
+  app.post("/add/all reviews by tv show", (request, response) =>{
+    console.log(request.body.all reviews by tv show);
+    response.json(addUser(request.body.all reviews by tv show));
+  })
+
+app.get("/get/all reviews by username", (request, response) =>{
   response.json(getAllReviewsByUserID(request.body.id));
-  console.log(allReview);
+  console.log(allReviewByUsername);
 });
 
-app.get("/all/reviews", (request, response) => {
-  response.json(getAllReviewsByUserID(request.body.id));
-  console.log(allReview);
-});
+app.post("/get/all reviews by username", (request, response) =>{
+    console.log(request.body.all reviews by username);
+    response.json(addUser(request.body.all reviews by username));
+  });
 
 /*app.post("/tvshow", (request, response) => {
     console.log(request.body);
