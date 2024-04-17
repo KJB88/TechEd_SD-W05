@@ -106,20 +106,6 @@ insertTVShows.run(
   9
 );
 
-insertTVShows.run(
-  "Last of the Summer Wine",
-  "Three old men from Yorkshire who have never grown up face the trials of their fellow town citizens and everyday life and stay young by reminiscing about the days of their youth and attempting feats not common to the elderly.",
-  1,
-  10
-);
-
-insertTVShows.run(
-  "Dad's Army",
-  "A ragtag group of Home Guard volunteers prepare for an imminent German invasion during World War II.",
-  2524,
-  11
-);
-
 const insertUsers = db.prepare(`INSERT INTO users (name) VALUES (?)`);
 insertUsers.run("Kev");
 insertUsers.run("Connor");
@@ -135,11 +121,6 @@ insertReview.run(
   1
 );
 insertReview.run("Best TV show ever! 10 out of 10, would cry again.", 5, 2);
-insertReview.run(
-  "Last of the Summer Wine reminds me of the good old days",
-  11,
-  1
-);
 insertReview.run(
   "Attack on Titan - emotion rollercoaster from beginning to end, who'd have though they planned from the start!",
   2,

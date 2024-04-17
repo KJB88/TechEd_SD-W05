@@ -1,6 +1,5 @@
-import Glide from "@glidejs/glide";
-
-new Glide(".glide").mount();
+import { getAll, ALL_TVSHOWS } from "./networkHandler.js";
+import { buildGallery } from "./galleryBuilder.js";
 /*
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('search-form');
@@ -25,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 */
+
+getAll(ALL_TVSHOWS, buildGallery);
 document.querySelectorAll(".gallery").forEach((gallery) => {
   const imagesContainer = gallery.querySelector(".gallery-images");
   const prevBtn = gallery.querySelector(".prev-btn");

@@ -12,25 +12,24 @@ export const ADD_TVSHOW = "/tvshow";
 export const ADD_REVIEW = "/review";
 
 // Get ALL
-export async function getAll(serverTag) {
+export async function getAll(serverTag, callback) {
   const response = await fetch(`${apiURL}${serverTag}`);
 
   const data = await response.json();
-
   console.log(data);
+  callback(data);
 }
 
 // Get by ID
-export async function getByID(serverTag, id) {
+export async function getByID(serverTag, id, callback) {
   const response = await fetch(`${apiURL}${serverTag}${id}`);
 
   const data = await response.json();
-
-  console.log(data);
+  callback(data);
 }
 
 // Post
-export async function postToServer(serverTag, payload) {
+export async function postToServer(serverTag, payload, callback) {
   const response = await fetch(`${apiURL}${serverTag}`, {
     method: "POST",
     body: JSON.stringify(payload),
@@ -41,5 +40,5 @@ export async function postToServer(serverTag, payload) {
 
   const data = await response.json();
 
-  console.log(data);
+  callback(data);
 }

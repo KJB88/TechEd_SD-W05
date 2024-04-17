@@ -76,13 +76,19 @@ nav a {
 .gallery-images {
   overflow: hidden;
   white-space: nowrap;
+  width: 800px;
 }
 
-.gallery-images img {
+#recently-added {
+  width: 800px;
+}
+.gallery-images .gallery-li {
   width: 200px;
   height: auto;
-  object-fit: cover;
-  margin-right: 10px;
+}
+.gallery-images .gallery-img {
+  width: 200px;
+  height: auto;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
