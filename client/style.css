@@ -3,6 +3,7 @@
   color: white;
   font-family: "Roboto", sans-serif;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -12,14 +13,14 @@ header {
   color: white;
 }
 
-body {
-  /*
-    background-image: linear-gradient(
-    to bottom,
-    #fbbc05,
-    #f8d572
+/* body {
+  /* /*
+      background-image: linear-gradient(
+      to bottom,
+      #fbbc05,
+      #f8d572
   ); Yellow gradient from top to bottom */
-}
+ */ */
 
 p {
   padding: 0; /* Remove padding */
@@ -84,6 +85,7 @@ nav a {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
+
 .prev-btn,
 .next-btn {
   background: #fff;
@@ -110,7 +112,6 @@ footer {
   color: white;
   text-align: center;
 }
-
 
 footer p {
   margin: 0;
@@ -148,4 +149,25 @@ footer p {
 
 #search-button:hover {
   background-color: #fbbc05; /* Darker shade of your theme color */
+}
+
+/* Add background images */
+
+
+.recently-Added {
+  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
+  background-size: cover;
+  background-position: center;
+}
+
+.Live-Rankings {
+  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
+  background-size: cover;
+  background-position: center;
+}
+
+.Recent-Reviews {
+  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
+  background-size: cover;
+  background-position: center;
 }
