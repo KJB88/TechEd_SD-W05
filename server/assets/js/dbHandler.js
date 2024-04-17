@@ -35,11 +35,11 @@ const selectAllReviewsByTVShowIDAndUserID = db.prepare(
 const selectAllTVShows = db.prepare(`SELECT * FROM tv_shows`);
 const selectTVShowByID = db.prepare(`SELECT * FROM tv_shows WHERE id = ?`);
 const selectTVShowByName = db.prepare(`SELECT * FROM tv_shows WHERE name = ?`);
-const selectTVShowsByLessThanRating = db.prepare(
-  `SELECT * FROM tv_shows WHERE rating <= (?)`
+const selectTVShowsWithLikesLessThan = db.prepare(
+  `SELECT * FROM tv_shows WHERE likes <= (?)`
 );
-const selectTVShowsByGreaterThanRating = db.prepare(
-  `SELECT * FROM tv_shows WHERE rating >= (?)`
+const selectTVShowsWithLikesGreaterThan = db.prepare(
+  `SELECT * FROM tv_shows WHERE likes >= (?)`
 );
 
 // #endregion SELECT
@@ -56,7 +56,7 @@ const insertReview = db.prepare(
 
 // TV Shows
 const insertTVShows = db.prepare(
-  `INSERT OR IGNORE INTO tv_shows (name, rating) VALUES (?, ?)`
+  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, imgID) VALUES (?, ?, ?, ?)`
 );
 
 // #endregion INSERT
@@ -77,24 +77,24 @@ const updateReviewByReviewID = db.prepare(
 );
 
 // TV Shows
-// Replace the rating on a TV Show with the given value, specified by TV Show ID
-const updateTVShowRatingReplaceByID = db.prepare(
-  `UPDATE tv_shows SET rating = (?) WHERE id = ?`
+// Replace the likes on a TV Show with the given value, specified by TV Show ID
+const updateTVShowLikesReplaceByID = db.prepare(
+  `UPDATE tv_shows SET likes = ? WHERE id = ?`
 );
 
-// Add the given value on the rating on a TV Show, specified by TV Show ID
-const updateTVShowRatingAdditiveByID = db.prepare(
-  `UPDATE tv_shows SET rating = rating + (?) WHERE id = ?`
+// Add one to the likes of a TV Show, specified by TV Show ID
+const updateTVShowLikesAdditiveByID = db.prepare(
+  `UPDATE tv_shows SET likes = likes + 1 WHERE id = ?`
 );
 
-// Replace the rating on a TV Show with the given value, specified by TV Show Name
-const updateTVShowRatingReplaceByName = db.prepare(
-  `UPDATE tv_shows SET rating = (?) WHERE name = ?`
+// Replace the likes on a TV Show with the given value, specified by TV Show Name
+const updateTVShowLikesReplaceByName = db.prepare(
+  `UPDATE tv_shows SET likes = ? WHERE name = ?`
 );
 
-// Add the given value on the rating on a TV Show, specified by TV Show Name
-const updateTVShowRatingAdditiveByName = db.prepare(
-  `UPDATE tv_shows SET rating = rating + (?) WHERE name = ?`
+// Add one to the likes of a TV Show, specified by TV Show Name
+const updateTVShowLikesAdditiveByName = db.prepare(
+  `UPDATE tv_shows SET likes = likes + 1 WHERE name = ?`
 );
 
 // #endregion UPDATE
@@ -180,14 +180,14 @@ export function getTVShowByID(tvShowID) {
 export function getTVShowByName(tvShowName) {
   return selectTVShowByName.all(tvShowName);
 }
-/* Returns TV shows that have a rating less than the threshold */
-export function getTVShowsByLessThanRating(threshold) {
-  return selectTVShowsByLessThanRating.all(threshold);
+/* Returns TV shows that have a number of likes less than the given threshold */
+export function getTVShowsWithLikesLessThan(threshold) {
+  return selectTVShowsWithLikesLessThan.all(threshold);
 }
 
-/* Returns TV shows that have a rating greater than the threshold */
-export function getTVShowsByGreaterThanRating(threshold) {
-  return selectTVShowsByGreaterThanRating.all(threshold);
+/* Returns TV shows that have a number of likes greater than the given threshold */
+export function getTVShowsWithLikesGreaterThan(threshold) {
+  return selectTVShowsWithLikesGreaterThan.all(threshold);
 }
 
 // #endregion GET
@@ -213,8 +213,8 @@ export function addReview(reviewContent, tvShowID, userID) {
 // TV Shows
 /* Adds a TV Show to the database
 Returns all TV Shows. */
-export function addTVShow(showName, rating) {
-  insertTVShows.run(showName, rating);
+export function addTVShow(showName, description, likes, imgID) {
+  insertTVShows.run(showName, description, likes, imgID);
   return getAllTVShows();
 }
 
@@ -248,29 +248,29 @@ export function modifyReviewByReviewID(newReviewContent, reviewID) {
 // TV Shows
 /* Modify the rating of a TV Show with the given rating, specified by ID
 Returns the modified TV Show after the change.*/
-export function modifyTVShowRatingReplaceByID(rating, tvShowID) {
-  updateTVShowRatingReplaceByID.run(rating, tvShowID);
+export function modifyTVShowLikesReplaceByID(newLikeCount, tvShowID) {
+  updateTVShowLikesReplaceByID.run(newLikeCount, tvShowID);
   return getTVShowByID(tvShowID);
 }
 
 /* Modify the rating of a TV by adding the given rating to it, specified by ID.
 Returns the modified TV Show after the change. */
-export function modifyTVShowRatingAdditiveByID(rating, tvShowID) {
-  updateTVShowRatingAdditiveByID.run(rating, tvShowID);
+export function modifyTVShowLikesAdditiveByID(tvShowID) {
+  updateTVShowLikesAdditiveByID.run(tvShowID);
   return getTVShowByID(tvShowID);
 }
 
 /* Modify the rating of a TV show by replacing it with the given rating, specified by TV Show Name. 
 Returns the modified TV Show after the change. */
-export function modifyTVShowRatingReplaceByName(rating, tvShowName) {
-  updateTVShowRatingReplaceByName.run(rating, tvShowName);
+export function modifyTVShowLikesReplaceByName(newLikeCount, tvShowName) {
+  updateTVShowLikesReplaceByName.run(newLikeCount, tvShowName);
   return getTVShowByName(tvShowName);
 }
 
 /* Modify the rating of a TV by adding the given rating to it, specified by Name.
 Returns the modified TV Show after the change. */
-export function modifyTVShowRatingAdditiveByName(rating, tvShowName) {
-  updateTVShowRatingAdditiveByName.run(rating, tvShowName);
+export function modifyTVShowLikesAdditiveByName(tvShowName) {
+  updateTVShowLikesAdditiveByName.run(tvShowName);
   return getTVShowByName(tvShowName);
 }
 
@@ -344,24 +344,26 @@ function testSelects() {
   console.log(getAllTVShows());
   console.log(getTVShowByID(1));
   console.log(getTVShowByName("Firefly"));
-  console.log(getTVShowsByLessThanRating(5));
-  console.log(getTVShowsByGreaterThanRating(0));
+  console.log(getTVShowsWithLikesLessThan(5));
+  console.log(getTVShowsWithLikesGreaterThan(0));
 }
 
 function testInserts() {
   console.log(addUser("Sara"));
   console.log(addReview("This is the best show that ever existed!", 1, 1));
-  console.log(addTVShow("24", 3.0));
+  console.log(
+    addTVShow("24", "How does he manage to do all this in 24 hours?", 0, 1)
+  );
 }
 
 function testUpdates() {
   console.log(modifyUserNameByID("Kevin", 1));
   console.log(modifyUserNameByName("Kev", "Kevin"));
   console.log(modifyReviewByReviewID("I REALLY love this show!!", 1));
-  console.log(modifyTVShowRatingReplaceByID(1, 1));
-  console.log(modifyTVShowRatingAdditiveByID(1, 1));
-  console.log(modifyTVShowRatingReplaceByName(1, "Firefly"));
-  console.log(modifyTVShowRatingAdditiveByName(1, "Firefly"));
+  console.log(modifyTVShowLikesReplaceByID(1, 1));
+  console.log(modifyTVShowLikesAdditiveByID(1));
+  console.log(modifyTVShowLikesReplaceByName(1, "Firefly"));
+  console.log(modifyTVShowLikesAdditiveByName("Firefly"));
 }
 
 function testDeletes() {
