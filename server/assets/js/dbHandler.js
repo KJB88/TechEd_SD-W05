@@ -205,8 +205,8 @@ export function addUser(userName) {
 // Reviews
 /* Add a review to the database
 Returns all reviews from the given user (by user ID) on the given TV Show (by tvShow ID). */
-export function addReview(reviewContent, tvShowID, userID) {
-  insertReview.run(reviewContent, tvShowID, userID);
+export function addReview(content, tvShowID, userID) {
+  insertReview.run(content, tvShowID, userID);
   return getAllReviewsByTVShowIDAndUserID(tvShowID, userID);
 }
 

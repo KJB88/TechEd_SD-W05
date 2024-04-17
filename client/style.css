@@ -16,13 +16,9 @@ header {
   flex-direction: column;
 }
 
-
 body {
   background-color: black;
 }
-
-
-
 
 
 .display {
@@ -31,7 +27,6 @@ body {
   justify-content: center; /* Align items horizontally to the center */
   align-items: center; /* Align items vertically to the center */
   text-align: center; /* Align text to the center */
-
 }
 
 #logo {
@@ -165,7 +160,6 @@ footer p {
 }
 
 /* Add background images */
-
 
 .container-background {
   background-image: url("sincerely-media-vZpHj0FyhnY-unsplash.webp");
