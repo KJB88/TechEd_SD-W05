@@ -33,8 +33,8 @@ app.get("/get/all reviews by user", (request, response) =>{
 });
 
 app.post("/add/all reviews", (request, response) =>{
-    console.log(request.body.all reviews);
-    response.json(addUser(request.body.all reviews));
+    console.log(request.body.allreviews);
+    response.json(addAllReviews(request.body.allreviews));
   });
 
 app.get("/get/all reviews by tv show", (request, response) => {
@@ -44,19 +44,19 @@ app.get("/get/all reviews by tv show", (request, response) => {
   })
 
   app.post("/add/all reviews by tv show", (request, response) =>{
-    console.log(request.body.all reviews by tv show);
-    response.json(addUser(request.body.all reviews by tv show));
+    console.log(request.body.allreviewsbytvshow);
+    response.json(addAllReviewsByTVShow(request.body.allreviewsbytvshow));
   })
 
 app.get("/get/all reviews by username", (request, response) =>{
   response.json(getAllReviewsByUserID(request.body.id));
   console.log(allReviewByUsername);
-});
+})
 
 app.post("/get/all reviews by username", (request, response) =>{
-    console.log(request.body.all reviews by username);
-    response.json(addUser(request.body.all reviews by username));
-  });
+    console.log(request.body.allreviewsbyusername);
+    response.json(addAllReviewsByUsername(request.body.allreviewsbyusername));
+  })
 
 /*app.post("/tvshow", (request, response) => {
     console.log(request.body);
