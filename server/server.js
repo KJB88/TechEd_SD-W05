@@ -1,6 +1,11 @@
 import express, { request, response } from "express";
 import cors from "cors";
-import { addUser, getAllReviewsByUserID, getReviewByID, getUserByID } from "./assets/js/dbHandler.js";
+import {
+  addUser,
+  getAllReviewsByUserID,
+  getReviewByID,
+  getUserByID,
+} from "./assets/js/dbHandler.js";
 
 const app = express();
 app.use(express.json());
@@ -27,36 +32,30 @@ app.get("/get/review", (request, response) => {
   response.json(getReviewByID(request.body.id));
   console.log(getReview);
 });
-app.get("/get/all reviews by user", (request, response) =>{
+app.get("/get/reviews/all", (request, response) => {
   response.json(getAllReviewsByUserID(request.body.id));
   console.log(getAllReviewsByUserID);
 });
 
-app.post("/add/all reviews", (request, response) =>{
-    console.log(request.body.allreviews);
-    response.json(addAllReviews(request.body.allreviews));
-  });
+app.post("/add/review", (request, response) => {
+  console.log(request.body.reviews);
+  response.json(addAllReviews(request.body.reviews));
+});
 
-app.get("/get/all reviews by tv show", (request, response) => {
-  response.json(app.get("/all/reviews", (request, response) => {
-    response.json(getAllReviewsByTVshowID(request.body.id));
-    console.log(allReviewByTVshow);
-  })
+app.get("/get/review/all/byTvshow", (request, response) => {
+  response.json(getAllReviewsByTVShowID(request.body.id));
+  console.log(allReviewByTVshow);
+});
 
-  app.post("/add/all reviews by tv show", (request, response) =>{
-    console.log(request.body.allreviewsbytvshow);
-    response.json(addAllReviewsByTVShow(request.body.allreviewsbytvshow));
-  })
+app.post("/add/tvshow", (request, response) => {
+  console.log(request.body.tvshow);
+  response.json(addTVShow(request.body.id));
+});
 
-app.get("/get/all reviews by username", (request, response) =>{
+app.get("/get/allreviewsbyusername", (request, response) => {
   response.json(getAllReviewsByUserID(request.body.id));
   console.log(allReviewByUsername);
-})
-
-app.post("/get/all reviews by username", (request, response) =>{
-    console.log(request.body.allreviewsbyusername);
-    response.json(addAllReviewsByUsername(request.body.allreviewsbyusername));
-  })
+});
 
 /*app.post("/tvshow", (request, response) => {
     console.log(request.body);
