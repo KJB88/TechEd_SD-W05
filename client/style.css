@@ -17,6 +17,9 @@ header {
 
 }
 
+body {
+  background-color: black;
+
 #title {
   display: flex;
   align-items: center;
@@ -27,6 +30,7 @@ header {
 .next-btn {
 position: absolute;
 right: 0;
+
 }
 .prev-btn {
 position: absolute;
@@ -35,6 +39,21 @@ z-index: 1;
 }
 
 
+
+/* body {
+  /* /*
+      background-image: linear-gradient(
+      to bottom,
+      #fbbc05,
+      #f8d572
+  ); Yellow gradient from top to bottom */
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align items horizontally to the center */
+  align-items: center; /* Align items vertically to the center */
+  text-align: center; /* Align text to the center */
 
 
 body {
@@ -50,6 +69,7 @@ body {
   /* Align items vertically to the center */
   text-align: center;
   /* Align text to the center */
+
 }
 
 #logo {
