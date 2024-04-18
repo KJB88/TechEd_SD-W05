@@ -3,7 +3,7 @@ import Glide from "@glidejs/glide";
 // #region Glide impl.
 export const recentAddGlide = new Glide(".recently-added-glide", {
   type: "carousel",
-  perView: 7,
+  perView: 5,
   startAt: 3,
   focusAt: "center",
   gap: 5,
@@ -12,47 +12,31 @@ export const recentAddGlide = new Glide(".recently-added-glide", {
       perView: 2,
     },
     900: {
-      perView: 3,
+      perView: 2,
     },
     1100: {
-      perView: 4,
+      perView: 2,
     },
     1300: {
-      perView: 5,
+      perView: 3,
     },
     1500: {
-      perView: 6,
+      perView: 4,
     },
   },
 });
 export const recentReviewGlide = new Glide(".recent-review-glide", {
   type: "carousel",
-  perView: 7,
-  startAt: 3,
+  perView: 2,
+  startAt: 0,
   focusAt: "center",
   gap: 5,
-  breakpoints: {
-    700: {
-      perView: 2,
-    },
-    900: {
-      perView: 3,
-    },
-    1100: {
-      perView: 4,
-    },
-    1300: {
-      perView: 5,
-    },
-    1500: {
-      perView: 6,
-    },
-  },
 });
+
 export const liveRankingGlide = new Glide(".live-ranking-glide", {
-  type: "carousel",
-  perView: 7,
-  startAt: 3,
+  type: "slider",
+  perView: 4,
+  startAt: 0,
   focusAt: "center",
   gap: 5,
   breakpoints: {
@@ -60,16 +44,16 @@ export const liveRankingGlide = new Glide(".live-ranking-glide", {
       perView: 2,
     },
     900: {
-      perView: 3,
+      perView: 2,
     },
     1100: {
-      perView: 4,
+      perView: 3,
     },
     1300: {
-      perView: 5,
+      perView: 4,
     },
     1500: {
-      perView: 6,
+      perView: 4,
     },
   },
 });
@@ -132,7 +116,10 @@ export function buildRecentReviews(data) {
     const listItemElement = buildListItem(); // Construct LI
     const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt); // Construct IMG
 
+    const rankHeaderElement = buildRankingHeader(i);
+
     // Finalize
+    imgElement.append(rankHeaderElement);
     listItemElement.append(imgElement); // Append IMG to LI
     parent.append(listItemElement); // Append LI to RecentlyAdded
   }
@@ -161,5 +148,11 @@ function buildImg(imgSrc, imgAlt) {
   return newImg;
 }
 
+function buildRankingHeader(id) {
+  const newHeader = document.createElement("h2");
+  newHeader.classList.add("ranking-header");
+  newHeader.textContent = id;
+  return newHeader;
+}
 // #endregion Generic Builders
 /* -------------------- */
