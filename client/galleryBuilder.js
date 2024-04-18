@@ -1,12 +1,30 @@
 import Glide from "@glidejs/glide";
 
-const glide = new Glide(".glide", {
+ export const glide = new Glide(".glide", {
   type: "carousel",
-  perView: 3,
+  perView: 7,
   startAt: 3,
   focusAt: "center",
-  gap: 25,
-});
+  gap: 5,
+  breakpoints: {
+    700: {
+      perView: 2
+    },
+    900: {
+      perView: 3
+    },
+    1100: {
+      perView: 4
+    },
+    1300: {
+      perView: 5
+    },
+    1500: {
+      perView: 6
+    }
+  }
+  });
+
 
 const showImgs = [
   "fallout.webp",
