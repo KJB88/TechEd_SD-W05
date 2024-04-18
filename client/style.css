@@ -207,6 +207,39 @@ nav a:hover {
 
 .ranking-header {
   position: absolute;
+  height: 30px;
+  width: 20px;
+  margin-top: 10px;
+  margin-left: 50px;
+  background-color: #fbbc05;
+  border-radius: 15px;
+  border: var(--core-border-styling);
+}
+
+.ranking-likes-container {
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  bottom: 20px;
+  margin-left: 50px;
+  background-color: #977304c6;
+  border-radius: 15px;
+  border: solid 2px #654d03;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.ranking-likes-container .likes-img {
+  width: 20px;
+  height: 20px;
+  padding: 2.5px;
+}
+
+.ranking-likes-container .likes-counter {
+  margin-top: 5px;
+  margin-left: 2px;
+  font-weight: bold;
+  padding: 2.5px;
 }
 .prev-btn,
 .next-btn {

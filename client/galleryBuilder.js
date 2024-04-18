@@ -1,4 +1,6 @@
 import Glide from "@glidejs/glide";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 // #region Glide impl.
 export const recentAddGlide = new Glide(".recently-added-glide", {
@@ -30,13 +32,13 @@ export const recentReviewGlide = new Glide(".recent-review-glide", {
   perView: 2,
   startAt: 0,
   focusAt: "center",
-  gap: 5,
+  gap: 1,
 });
 
 export const liveRankingGlide = new Glide(".live-ranking-glide", {
   type: "slider",
   perView: 4,
-  startAt: 0,
+  startAt: 1,
   focusAt: "center",
   gap: 5,
   breakpoints: {
@@ -100,9 +102,13 @@ export function buildLiveRanking(data) {
   for (let i = 0; i < data.length; i++) {
     const listItemElement = buildListItem(); // Construct LI
     const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt); // Construct IMG
+    const rankHeaderElement = buildRankingHeader(i);
+    const likesElement = buildLike(data[i].likes);
 
     // Finalize
+    listItemElement.append(rankHeaderElement);
     listItemElement.append(imgElement); // Append IMG to LI
+    listItemElement.append(likesElement);
     parent.append(listItemElement); // Append LI to RecentlyAdded
   }
 
@@ -116,10 +122,7 @@ export function buildRecentReviews(data) {
     const listItemElement = buildListItem(); // Construct LI
     const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt); // Construct IMG
 
-    const rankHeaderElement = buildRankingHeader(i);
-
     // Finalize
-    imgElement.append(rankHeaderElement);
     listItemElement.append(imgElement); // Append IMG to LI
     parent.append(listItemElement); // Append LI to RecentlyAdded
   }
@@ -151,8 +154,25 @@ function buildImg(imgSrc, imgAlt) {
 function buildRankingHeader(id) {
   const newHeader = document.createElement("h2");
   newHeader.classList.add("ranking-header");
-  newHeader.textContent = id;
+  newHeader.textContent = id + 1;
   return newHeader;
+}
+
+function buildLike(likes) {
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("ranking-likes-container");
+
+  const newSpan = document.createElement("span");
+  newSpan.classList.add("likes-counter");
+  newSpan.textContent = likes;
+
+  const newImg = document.createElement("img");
+  newImg.classList.add("likes-img");
+  newImg.src = "tup.png";
+
+  newDiv.append(newImg);
+  newDiv.append(newSpan);
+  return newDiv;
 }
 // #endregion Generic Builders
 /* -------------------- */
