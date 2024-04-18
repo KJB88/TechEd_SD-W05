@@ -31,6 +31,9 @@ const selectAllReviewsByTVShowIDAndUserID = db.prepare(
   `SELECT * FROM reviews WHERE tvID = ? AND  userID = ?`
 );
 
+const selectAllReviewsAndUsersByShowID = db.prepare(
+  `SELECT reviews.*, users.name FROM reviews INNER JOIN users ON reviews.userID = users.id AND reviews.tvID = ?`
+);
 // TV Shows
 const selectAllTVShows = db.prepare(`SELECT * FROM tv_shows`);
 const selectTVShowByID = db.prepare(`SELECT * FROM tv_shows WHERE id = ?`);
@@ -65,7 +68,7 @@ const insertReview = db.prepare(
 
 // TV Shows
 const insertTVShows = db.prepare(
-  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, img) VALUES (?, ?, ?, ?)`
+  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, img, alt) VALUES (?, ?, ?, ?, ?)`
 );
 
 // #endregion INSERT
@@ -174,6 +177,9 @@ export function getAllReviewsByTVShowIDAndUserID(tvShowID, userID) {
   return selectAllReviewsByTVShowIDAndUserID.all(tvShowID, userID);
 }
 
+export function getAllReviewsAndUsersByShowID(showID) {
+  return selectAllReviewsAndUsersByShowID.all(showID);
+}
 // TV Shows
 /* Returns all TV shows */
 export function getAllTVShows() {
@@ -231,8 +237,8 @@ export function addReview(content, tvShowID, userID) {
 // TV Shows
 /* Adds a TV Show to the database
 Returns all TV Shows. */
-export function addTVShow(showName, description, likes, imgID) {
-  insertTVShows.run(showName, description, likes, imgID);
+export function addTVShow(showName, description, likes, img, alt) {
+  insertTVShows.run(showName, description, likes, img, alt);
   return getAllTVShows();
 }
 

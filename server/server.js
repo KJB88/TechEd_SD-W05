@@ -18,6 +18,7 @@ import {
   addUser,
   addTVShow,
   addReview,
+  getAllReviewsAndUsersByShowID,
 } from "./assets/js/dbHandler.js";
 
 const app = express();
@@ -67,6 +68,12 @@ app.get("/review/all/byShowID", (request, response) => {
 app.get("/review/byID", (request, response) => {
   console.log(`GET /review/byID?`);
   response.json(getReviewByID(request.query.reviewID));
+});
+
+// Get reviews and users by show ID
+app.get("/review/andUsers/byShowID", (request, response) => {
+  console.log(`GET /review/andUsers/byShowID?${request.query.showID}`);
+  response.json(getAllReviewsAndUsersByShowID(request.query.showID));
 });
 
 // TV Shows
@@ -119,7 +126,8 @@ app.post("/tvshow", (request, response) => {
       request.body.name,
       request.body.desc,
       request.body.likes,
-      request.body.imgID
+      request.body.img,
+      request.body.alt
     )
   );
 });
