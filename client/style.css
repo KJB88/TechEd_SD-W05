@@ -14,11 +14,11 @@ header {
 
   text-align: center;
   flex-direction: row;
-
 }
 
 body {
   background-color: black;
+}
 
 #title {
   display: flex;
@@ -28,25 +28,14 @@ body {
 }
 
 .next-btn {
-position: absolute;
-right: 0;
-
+  position: absolute;
+  right: 0;
 }
 .prev-btn {
-position: absolute;
-left: 0;
-z-index: 1;
+  position: absolute;
+  left: 0;
+  z-index: 1;
 }
-
-
-
-/* body {
-  /* /*
-      background-image: linear-gradient(
-      to bottom,
-      #fbbc05,
-      #f8d572
-  ); Yellow gradient from top to bottom */
 
 .display {
   display: flex;
@@ -54,7 +43,7 @@ z-index: 1;
   justify-content: center; /* Align items horizontally to the center */
   align-items: center; /* Align items vertically to the center */
   text-align: center; /* Align text to the center */
-
+}
 
 body {
   background-color: black;
@@ -69,7 +58,6 @@ body {
   /* Align items vertically to the center */
   text-align: center;
   /* Align text to the center */
-
 }
 
 #logo {
@@ -138,7 +126,7 @@ nav a {
   white-space: nowrap;
   width: 100%;
   padding: 5px 0;
-  background-color:#f8d4723b;
+  background-color: #f8d4723b;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.136);
 }
 
@@ -251,5 +239,5 @@ footer p {
 .advert {
   display: flex;
   justify-content: center;
-  padding:5px;
+  padding: 5px;
 }

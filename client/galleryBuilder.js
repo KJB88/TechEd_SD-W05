@@ -1,6 +1,6 @@
 import Glide from "@glidejs/glide";
 
- export const glide = new Glide(".glide", {
+export const glide = new Glide(".glide", {
   type: "carousel",
   perView: 7,
   startAt: 3,
@@ -8,35 +8,34 @@ import Glide from "@glidejs/glide";
   gap: 5,
   breakpoints: {
     700: {
-      perView: 2
+      perView: 2,
     },
     900: {
-      perView: 3
+      perView: 3,
     },
     1100: {
-      perView: 4
+      perView: 4,
     },
     1300: {
-      perView: 5
+      perView: 5,
     },
     1500: {
-      perView: 6
-    }
-  }
-  });
-
+      perView: 6,
+    },
+  },
+});
 
 const showImgs = [
-  "fallout.webp",
-  "aot.webp",
-  "thewitcher.webp",
-  "drwho.webp",
-  "bluey.webp",
-  "firefly.webp",
-  "cowboy.webp",
-  "scrubs.webp",
-  "reddwarf.webp",
-  "mha.webp",
+  { filePath: "fallout.webp", aria: "Image and link to prog" },
+  { filePath: "aot.webp", aria: "Image and link to prog" },
+  { filePath: "thewitcher.webp", aria: "Image and link to prog" },
+  { filePath: "drwho.webp", aria: "Image and link to prog" },
+  { filePath: "bluey.webp", aria: "Image and link to prog" },
+  { filePath: "firefly.webp", aria: "Image and link to prog" },
+  { filePath: "cowboy.webp", aria: "Image and link to prog" },
+  { filePath: "scrubs.webp", aria: "Image and link to prog" },
+  { filePath: "reddwarf.webp", aria: "Image and link to prog" },
+  { filePath: "mha.webp", aria: "Image and link to prog" },
 ];
 
 const glideSlides = document.getElementById("recently-added");
@@ -48,7 +47,8 @@ export function buildGallery(data) {
     newlistItem.classList.add("gallery-li");
     const newImg = document.createElement("img");
     newImg.classList.add("gallery-img");
-    newImg.src = showImgs[data[i].imgID];
+    newImg.src = showImgs[data[i].imgID].filePath;
+    newImg.ariaLabel = showImgs[data[i].imgID].aria;
     newImg.alt = data[i].alt;
 
     newlistItem.append(newImg);
