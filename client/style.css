@@ -29,8 +29,6 @@ header {
 
   text-align: center;
   flex-direction: row;
-
-  border-bottom: var(--core-border-styling);
 }
 
 #logo {
