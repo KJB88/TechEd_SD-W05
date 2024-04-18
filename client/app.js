@@ -1,79 +1,6 @@
 import { getAll, ALL_TVSHOWS } from "./networkHandler.js";
-import { buildGallery } from "./galleryBuilder.js";
-import Glide from "@glidejs/glide";
+import { buildGallery, glide } from "./galleryBuilder.js";
 
-export const recentAddGlide = new Glide(".recently-added-glide", {
-  type: "carousel",
-  perView: 7,
-  startAt: 3,
-  focusAt: "center",
-  gap: 5,
-  breakpoints: {
-    700: {
-      perView: 2,
-    },
-    900: {
-      perView: 3,
-    },
-    1100: {
-      perView: 4,
-    },
-    1300: {
-      perView: 5,
-    },
-    1500: {
-      perView: 6,
-    },
-  },
-});
-export const recentReviewGlide = new Glide(".recent-review-glide", {
-  type: "carousel",
-  perView: 7,
-  startAt: 3,
-  focusAt: "center",
-  gap: 5,
-  breakpoints: {
-    700: {
-      perView: 2,
-    },
-    900: {
-      perView: 3,
-    },
-    1100: {
-      perView: 4,
-    },
-    1300: {
-      perView: 5,
-    },
-    1500: {
-      perView: 6,
-    },
-  },
-});
-export const liveRankingGlide = new Glide(".live-ranking-glide", {
-  type: "carousel",
-  perView: 7,
-  startAt: 3,
-  focusAt: "center",
-  gap: 5,
-  breakpoints: {
-    700: {
-      perView: 2,
-    },
-    900: {
-      perView: 3,
-    },
-    1100: {
-      perView: 4,
-    },
-    1300: {
-      perView: 5,
-    },
-    1500: {
-      perView: 6,
-    },
-  },
-});
 /*
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('search-form');
@@ -98,15 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 */
-
+/*
 getAll(ALL_TVSHOWS, (data) => {
   buildGallery(data, "recently-added");
-  recentAddGlide.mount();
+  recentAddGlide.mount(); // Remount recently added Glide
   buildGallery(data, "recent-reviews");
-  recentReviewGlide.mount();
+  recentReviewGlide.mount(); // Remount recent review Glide
   buildGallery(data, "live-rankings");
-  liveRankingGlide.mount();
+  liveRankingGlide.mount(); // Remount live rankings Glide
 });
+*/
 /*
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".gallery").forEach((gallery) => {

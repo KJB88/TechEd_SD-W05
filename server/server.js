@@ -80,6 +80,10 @@ app.get("/tvshow/byID", (request, response) => {
   response.json(getTVShowByID(request.query.showID));
 });
 
+app.get("/tvshow/byMostLikes", (request, response) => {
+  console.log(`GET /tvshow/byMostLikes`);
+  response.json(getTVShowByMostLikes());
+});
 /* #endregion Get Routing*/
 /* -------------------- */
 /* #region Post Routing */

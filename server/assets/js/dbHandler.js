@@ -41,6 +41,9 @@ const selectTVShowsWithLikesLessThan = db.prepare(
 const selectTVShowsWithLikesGreaterThan = db.prepare(
   `SELECT * FROM tv_shows WHERE likes >= (?)`
 );
+const selectTVShowsByLikesDescending = db.prepare(
+  `SELECT * FROM tv_shows ORDER BY likes DESC`
+);
 
 // #endregion SELECT
 /* ----- */
@@ -180,6 +183,12 @@ export function getTVShowByID(tvShowID) {
 export function getTVShowByName(tvShowName) {
   return selectTVShowByName.all(tvShowName);
 }
+
+/* Get TV shows by Likes (descending) */
+export function getTVShowByMostLikes() {
+  return selectTVShowsByLikesDescending();
+}
+
 /* Returns TV shows that have a number of likes less than the given threshold */
 export function getTVShowsWithLikesLessThan(threshold) {
   return selectTVShowsWithLikesLessThan.all(threshold);
