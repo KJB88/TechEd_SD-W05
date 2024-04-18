@@ -14,10 +14,13 @@ header {
   color: white;
 }
 
+<<<<<<< HEAD
 body {
   background-color: black;
 }
 
+=======
+>>>>>>> main
 /* body {
   /* /*
       background-image: linear-gradient(
@@ -25,7 +28,13 @@ body {
       #fbbc05,
       #f8d572
   ); Yellow gradient from top to bottom */
+<<<<<<< HEAD
 */ */ p {
+=======
+ */ */
+
+p {
+>>>>>>> main
   padding: 0; /* Remove padding */
   margin: 0; /* Optionally remove margin as well */
 }
@@ -36,6 +45,10 @@ body {
   justify-content: center; /* Align items horizontally to the center */
   align-items: center; /* Align items vertically to the center */
   text-align: center; /* Align text to the center */
+<<<<<<< HEAD
+=======
+  margin-bottom: 40px; /* Add margin as needed */
+>>>>>>> main
 }
 
 #logo {
@@ -151,8 +164,26 @@ footer p {
 
 /* Add background images */
 
+<<<<<<< HEAD
 .container-background {
   background-image: url("sincerely-media-vZpHj0FyhnY-unsplash.webp");
+=======
+
+.recently-Added {
+  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
+  background-size: cover;
+  background-position: center;
+}
+
+.Live-Rankings {
+  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
+  background-size: cover;
+  background-position: center;
+}
+
+.Recent-Reviews {
+  background-image: url("sincerely-media-vZpHj0FyhnY-unsplash");
+>>>>>>> main
   background-size: cover;
   background-position: center;
 }
