@@ -38,8 +38,17 @@ const selectTVShowByName = db.prepare(`SELECT * FROM tv_shows WHERE name = ?`);
 const selectTVShowsWithLikesLessThan = db.prepare(
   `SELECT * FROM tv_shows WHERE likes <= (?)`
 );
+
 const selectTVShowsWithLikesGreaterThan = db.prepare(
   `SELECT * FROM tv_shows WHERE likes >= (?)`
+);
+
+const selectTVShowsByLikesDescending = db.prepare(
+  `SELECT * FROM tv_shows ORDER BY likes DESC`
+);
+
+const selectTVShowsWithReviews = db.prepare(
+  "SELECT DISTINCT tv_shows.* FROM tv_shows INNER JOIN reviews ON tv_shows.id = reviews.tvID"
 );
 
 // #endregion SELECT
@@ -56,7 +65,7 @@ const insertReview = db.prepare(
 
 // TV Shows
 const insertTVShows = db.prepare(
-  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, imgID) VALUES (?, ?, ?, ?)`
+  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, img) VALUES (?, ?, ?, ?)`
 );
 
 // #endregion INSERT
@@ -127,7 +136,7 @@ const deleteTVShowByName = db.prepare(`DELETE FROM tv_shows WHERE name = ?`); //
 // #region Interface
 /* These control the access to the query, ensuring validity of input and integrity of output, including error handling. */
 
-// #region GET / SELECT / RETURN
+// #region GET
 // Users
 /* Returns all users in the database. */
 export function getAllUsers() {
@@ -180,11 +189,20 @@ export function getTVShowByID(tvShowID) {
 export function getTVShowByName(tvShowName) {
   return selectTVShowByName.all(tvShowName);
 }
+
+/* Get TV shows by Likes (descending) */
+export function getTVShowByMostLikes() {
+  return selectTVShowsByLikesDescending.all();
+}
+
 /* Returns TV shows that have a number of likes less than the given threshold */
 export function getTVShowsWithLikesLessThan(threshold) {
   return selectTVShowsWithLikesLessThan.all(threshold);
 }
 
+export function getTVShowsWithReviews() {
+  return selectTVShowsWithReviews.all();
+}
 /* Returns TV shows that have a number of likes greater than the given threshold */
 export function getTVShowsWithLikesGreaterThan(threshold) {
   return selectTVShowsWithLikesGreaterThan.all(threshold);
@@ -192,7 +210,7 @@ export function getTVShowsWithLikesGreaterThan(threshold) {
 
 // #endregion GET
 /* ----- */
-// #region ADD / POST / INSERT
+// #region POST
 
 // Users
 /* Add a user to the database
@@ -220,7 +238,7 @@ export function addTVShow(showName, description, likes, imgID) {
 
 // #endregion ADD / POST / INSERT
 /* ----- */
-// #region PUT / MODIFY / MUTATE
+// #region PUT
 
 // Users
 /* Modify a user's name with the given userName,  specified by ID
@@ -276,7 +294,7 @@ export function modifyTVShowLikesAdditiveByName(tvShowName) {
 
 // #endregion PUT / MODIFY / MUTATE
 /* ----- */
-// #region DELETE / REMOVE / ERASE
+// #region DEL
 
 // Users
 /* Delete a user specified by the user ID. 
