@@ -14,7 +14,6 @@ header {
 
   text-align: center;
   flex-direction: row;
-
 }
 
 #title {
@@ -25,17 +24,14 @@ header {
 }
 
 .next-btn {
-position: absolute;
-right: 0;
+  position: absolute;
+  right: 0;
 }
 .prev-btn {
-position: absolute;
-left: 0;
-z-index: 1;
+  position: absolute;
+  left: 0;
+  z-index: 1;
 }
-
-
-
 
 body {
   background-color: black;
@@ -118,11 +114,13 @@ nav a {
   white-space: nowrap;
   width: 100%;
   padding: 5px 0;
-  background-color:#f8d4723b;
+  background-color: #f8d4723b;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.136);
 }
 
-#recently-added {
+#recently-added,
+#recent-reviews,
+#live-rankings {
   width: 800px;
 }
 
@@ -167,10 +165,13 @@ nav a {
 }
 
 footer {
-  background: linear-gradient(to bottom, #fbbc05, #f8d572);
+  width: 100%;
   padding: 20px;
+  bottom: 0;
+
   color: white;
   text-align: center;
+  background: linear-gradient(to bottom, #fbbc05, #f8d572);
 }
 
 footer p {
@@ -231,5 +232,5 @@ footer p {
 .advert {
   display: flex;
   justify-content: center;
-  padding:5px;
+  padding: 5px;
 }

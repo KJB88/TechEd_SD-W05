@@ -16,7 +16,7 @@ export async function getAll(serverTag, callback) {
   const response = await fetch(`${apiURL}${serverTag}`);
 
   const data = await response.json();
-  console.log(data);
+  //console.log(data);
   callback(data);
 }
 
@@ -39,6 +39,5 @@ export async function postToServer(serverTag, payload, callback) {
   });
 
   const data = await response.json();
-
   callback(data);
 }
