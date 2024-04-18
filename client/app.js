@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const searchForm = document.getElementById("search-form");
   const searchBar = document.getElementById("search-bar");
@@ -34,6 +33,8 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
       currentIndex--;
       updateGallery();
     }
+  });
+});
 
 import { getAll, ALL_TVSHOWS } from "./networkHandler.js";
 import { buildGallery, glide } from "./galleryBuilder.js";
@@ -107,4 +108,4 @@ async function getUserName() {
   console.log(response);
 }
 await getUserName();
-
+*/

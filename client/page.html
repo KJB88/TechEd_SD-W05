@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,11 +11,16 @@
     <!-- HEADER -->
     <header>
       <div id="logo">
-        <img src="./public/logo2.png" id="logo" alt="TVReviewRiot Logo" />
+        <img
+          src="./public/logo2.png"
+          id="logo"
+          alt="TVReviewRiot Logo"
+          aria-label="TVReviewRiot Logo"
+        />
       </div>
       <h1 id="SG">TVReviewRiot</h1>
 
-      <nav>
+      <nav role="navigation">
         <a id="a1" href="#Home">Home</a>
         <a id="a2" href="./page">About</a>
         <a id="a3" href="#Latest Releases">Latest Release</a>
@@ -29,22 +33,19 @@
           </button>
         </div>
       </nav>
-
-
     </header>
 
     <!-- MAIN -->
     <main>
-
       <div class="show-picture">
         <!-- Space for Show Picture -->
-        <img src="show_image.jpg" alt="Show Image" />
+        <img src="show_image.jpg" alt="Show Image" aria-label="TV Show image" />
       </div>
 
       <div class="review-section">
         <!-- Space for Writing Reviews -->
         <h2>Write a Review</h2>
-        <form id="review-form">
+        <form id="review-form" aria-label="Form to write your review">
           <textarea
             id="review-text"
             rows="4"
@@ -57,8 +58,9 @@
       <div class="reviews">
         <!-- Display Reviews -->
         <h2>Reviews</h2>
-        <div id="reviews-container">
-          <!-- Reviews will be dynamically added here -->
+        <div id="reviews-container" aria-label="List of all reviews">
+          <!-- Reviews will be dynamically added here 
+            DO WE WANT ARIA LABELS ON INDIVIDUAL POSTS?-->
         </div>
       </div>
     </main>
@@ -68,4 +70,3 @@
     </footer>
   </body>
 </html>
-
