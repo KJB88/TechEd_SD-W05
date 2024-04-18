@@ -1,6 +1,6 @@
 /* Server Handling */
 /* -------------------- */
-import express from "express";
+import express, { request, response } from "express";
 import cors from "cors";
 import {
   /* Gets */
@@ -88,8 +88,7 @@ app.get("/tvshow/byID", (request, response) => {
 app.post("/user", (request, response) => {
   console.log(`POST /user`);
   console.log(request.body.name);
-
-  response.json(addUser(request.body.name));
+  response.json(addUserUserUser(request.body.name));
 });
 
 // Add new TV Show
@@ -117,10 +116,41 @@ app.post("/review", (request, response) => {
 /* #endregion Post Routing*/
 /* -------------------- */
 /* #region Put Routing */
+app.put("/user/byID", (request, response) => {
+  console.log(`PUT/user/byID`);
+  response.json(updateUser(request.body.name));
+});
+
+app.put("/tvshow/byID", (request, response) => {
+  console.log(`PUT /tvshow/byID`);
+  response.json(
+    updateUserTVShow(
+      request.body.name,
+      request.body.desc,
+      request.body.likes,
+      request.body.imgID
+    )
+  );
+});
+
+app.put("/review/byID", (request, response) => {
+  console.log(`PUT/review/byID`);
+  response.json(
+    updateReview(request.body.content, request.body.showID, request.body.userID)
+  );
+});
 
 /* #endregion Put Routing*/
 /* -------------------- */
 /* #region Delete Routing */
+app.delete("/user/byID", (request, response) => {
+  console.log(`DELETE/user`);
+  response.json({ message: `User with ID {userId} delete successfully` });
+});
 
+app.delete("/review/byID", (request, response) => {
+  console.log(`DELETE/review`);
+  response.json({ message: `Review with ID {reviewId} delete successfully` });
+});
 /* #endregion Delete Routing*/
 /* -------------------- */
