@@ -10,7 +10,7 @@ db.exec(`
 CREATE TABLE IF NOT EXISTS tv_shows
 (
     id INTEGER PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE,
+    name TEXT NOT NULL,
     desc TEXT NOT NULL,
     likes INTEGER NOT NULL DEFAULT 0,
     imgID INTEGER NOT NULL DEFAULT 0
@@ -20,7 +20,7 @@ db.exec(`
 CREATE TABLE IF NOT EXISTS users 
 (
   id INTEGER PRIMARY KEY,
-  name TEXT NOT NULL UNIQUE
+  name TEXT NOT NULL
 )`);
 
 db.exec(`
