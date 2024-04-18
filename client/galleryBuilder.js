@@ -6,7 +6,7 @@ Fancybox.bind("[data-fancybox]", {
 });
 
 // #region Glide impl.
-export const recentAddGlide = new Glide(".recently-added-glide", {
+export const recentAddGlide = new Glide("#recently-added-glide", {
   type: "carousel",
   perView: 5,
   startAt: 3,
@@ -30,7 +30,7 @@ export const recentAddGlide = new Glide(".recently-added-glide", {
     },
   },
 });
-export const recentReviewGlide = new Glide(".recent-review-glide", {
+export const recentReviewGlide = new Glide("#recent-review-glide", {
   type: "carousel",
   perView: 2,
   startAt: 0,
@@ -38,7 +38,7 @@ export const recentReviewGlide = new Glide(".recent-review-glide", {
   gap: 1,
 });
 
-export const liveRankingGlide = new Glide(".live-ranking-glide", {
+export const liveRankingGlide = new Glide("#live-ranking-glide", {
   type: "slider",
   perView: 4,
   startAt: 1,
@@ -111,6 +111,7 @@ export function buildRecentlyAdded(data) {
     parent.append(listItemElement); // Append LI to RecentlyAdded
   }
 
+  setupNavigationButtons("recently-added-glide", recentAddGlide);
   recentAddGlide.mount(); // Mount Glide.js carousel
 }
 
@@ -124,6 +125,7 @@ export function buildLiveRanking(data) {
       data[i].alt,
       data[i].id
     ); // Construct IMG
+
     const rankHeaderElement = buildRankingHeader(i);
     const likesElement = buildLike(data[i].likes);
 
@@ -134,6 +136,7 @@ export function buildLiveRanking(data) {
     parent.append(listItemElement); // Append LI to RecentlyAdded
   }
 
+  setupNavigationButtons("live-ranking-glide", liveRankingGlide);
   liveRankingGlide.mount(); // Mount Glide.js carousel
 }
 
@@ -153,6 +156,7 @@ export function buildRecentReviews(data) {
     parent.append(listItemElement); // Append LI to RecentlyAdded
   }
 
+  setupNavigationButtons("recent-review-glide", recentReviewGlide);
   recentReviewGlide.mount(); // Mount Glide.js carousel
 }
 
@@ -215,3 +219,21 @@ function buildLike(likes) {
 }
 // #endregion Generic Builders
 /* -------------------- */
+
+function setupNavigationButtons(parentGlide, glideElement) {
+  const parent = document.getElementById(parentGlide);
+  const prevBtn = parent.querySelector(".prev-btn");
+  const nextBtn = parent.querySelector(".next-btn");
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+      glideElement.go("<");
+    });
+
+    nextBtn.addEventListener("click", () => {
+      glideElement.go(">");
+    });
+  } else {
+    console.error("Navigation buttons not found.");
+  }
+}
