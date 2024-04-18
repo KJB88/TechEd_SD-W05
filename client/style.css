@@ -8,13 +8,34 @@
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   background: linear-gradient(to bottom, #fbbc05, #f8d572);
-  padding: 20px;
+  padding: 0px;
 
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
+
 }
+
+#title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-self: left;
+}
+
+.next-btn {
+position: absolute;
+right: 0;
+}
+.prev-btn {
+position: absolute;
+left: 0;
+z-index: 1;
+}
+
+
+
 
 body {
   background-color: black;
@@ -23,44 +44,63 @@ body {
 .display {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Align items horizontally to the center */
-  align-items: center; /* Align items vertically to the center */
-  text-align: center; /* Align text to the center */
+  justify-content: center;
+  /* Align items horizontally to the center */
+  align-items: center;
+  /* Align items vertically to the center */
+  text-align: center;
+  /* Align text to the center */
 }
 
 #logo {
-  margin-right: 20px; /* Adjust as needed */
-  width: 200px; /* Adjust the width to your desired size */
-  height: 200px; /* Allow the height to adjust proportionally */
-  object-fit: cover; /* Maintain aspect ratio */
+  margin-right: 20px;
+  /* Adjust as needed */
+  width: 100px;
+  /* Adjust the width to your desired size */
+  height: 100px;
+  /* Allow the height to adjust proportionally */
+  object-fit: cover;
+  /* Maintain aspect ratio */
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  margin-right: 0; /* Remove margin on smaller screens */
-  margin-bottom: 10px; /* Add some space between logo and headings */
+  margin-right: 0;
+  /* Remove margin on smaller screens */
+  margin-bottom: 10px;
+  /* Add some space between logo and headings */
 }
 
 nav {
   display: flex;
-  margin-left: auto; /* Pushes the nav to the right */
-  margin-left: 0; /* Remove margin on smaller screens */
+  margin-left: auto;
+  /* Pushes the nav to the right */
+  margin-left: 0;
+  /* Remove margin on smaller screens */
+  align-items: last baseline;
 }
 
 nav a {
-  margin-right: 10px; /* Adjust as needed */
+  margin-right: 10px;
+  /* Adjust as needed */
 }
 
 .h1 {
-  display: block; /* Ensures each heading takes full width */
-  text-align: center; /* Center the text */
-  margin: 10px 0; /* Add margin for spacing */
-  font-size: 30pt;
+  display: block;
+  /* Ensures each heading takes full width */
+  text-align: center;
+  /* Center the text */
+  margin: 0;
+  /* Add margin for spacing */
+  font-size: 42.5pt;
 }
 
 .h2 {
-  display: block; /* Ensures each heading takes full width */
-  text-align: center; /* Center the text */
-  margin: 10px 0; /* Add margin for spacing */
-  font-size: 15pt;
+  display: block;
+  /* Ensures each heading takes full width */
+  text-align: center;
+  /* Center the text */
+  margin: 0;
+  /* Add margin for spacing */
+  font-size: 10pt;
 }
 
 .display {
@@ -76,16 +116,21 @@ nav a {
 .gallery-images {
   overflow: hidden;
   white-space: nowrap;
-  width: 800px;
+  width: 100%;
+  padding: 5px 0;
+  background-color:#f8d4723b;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.136);
 }
 
 #recently-added {
   width: 800px;
 }
+
 .gallery-images .gallery-li {
   width: 200px;
   height: auto;
 }
+
 .gallery-images .gallery-img {
   width: 200px;
   height: auto;
@@ -112,11 +157,15 @@ nav a {
 
 @media (max-width: 768px) {
   header {
-    flex-direction: column; /* Stack elements vertically on smaller screens */
-    align-items: center; /* Center elements vertically */
-    text-align: center; /* Center text */
+    flex-direction: column;
+    /* Stack elements vertically on smaller screens */
+    align-items: center;
+    /* Center elements vertically */
+    text-align: center;
+    /* Center text */
   }
 }
+
 footer {
   background: linear-gradient(to bottom, #fbbc05, #f8d572);
   padding: 20px;
@@ -140,7 +189,8 @@ footer p {
   border: none;
   border-radius: 4px;
   margin-right: 5px;
-  width: 200px; /* Adjust width as needed */
+  width: 200px;
+  /* Adjust width as needed */
 }
 
 #search-bar:focus {
@@ -150,7 +200,8 @@ footer p {
 
 /* Style the search button */
 #search-button {
-  background-color: #070500; /* Match your theme color */
+  background-color: #070500;
+  /* Match your theme color */
   color: white;
   padding: 8px 12px;
   border: none;
@@ -159,7 +210,8 @@ footer p {
 }
 
 #search-button:hover {
-  background-color: #fbbc05; /* Darker shade of your theme color */
+  background-color: #fbbc05;
+  /* Darker shade of your theme color */
 }
 
 /* Add background images */
@@ -169,4 +221,15 @@ footer p {
 
   background-size: cover;
   background-position: center;
+}
+
+.container-background h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.advert {
+  display: flex;
+  justify-content: center;
+  padding:5px;
 }

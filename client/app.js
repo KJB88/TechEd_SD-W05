@@ -1,5 +1,6 @@
 import { getAll, ALL_TVSHOWS } from "./networkHandler.js";
-import { buildGallery } from "./galleryBuilder.js";
+import { buildGallery, glide } from "./galleryBuilder.js";
+
 /*
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('search-form');
@@ -26,7 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 
 getAll(ALL_TVSHOWS, buildGallery);
-document.querySelectorAll(".gallery").forEach((gallery) => {
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll(".gallery").forEach((gallery) => {
+  console.log(gallery)
   const imagesContainer = gallery.querySelector(".gallery-images");
   const prevBtn = gallery.querySelector(".prev-btn");
   const nextBtn = gallery.querySelector(".next-btn");
@@ -34,17 +37,12 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
   let currentIndex = 0;
 
   prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateGallery();
-    }
+    glide.go('<')
+    console.log(glide)
   });
 
   nextBtn.addEventListener("click", () => {
-    if (currentIndex < totalImages - 1) {
-      currentIndex++;
-      updateGallery();
-    }
+    glide.go('>')
   });
 
   function updateGallery() {
@@ -53,3 +51,4 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
     imagesContainer.style.transform = `translateX(-${offset}px)`;
   }
 });
+})
