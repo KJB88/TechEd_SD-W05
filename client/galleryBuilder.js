@@ -1,9 +1,7 @@
 import Glide from "@glidejs/glide";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-Fancybox.bind("[data-fancybox]", {
-  // Your custom options
-});
+Fancybox.bind("[data-fancybox]", {});
 
 // #region Glide impl.
 export const recentAddGlide = new Glide("#recently-added-glide", {
@@ -37,7 +35,6 @@ export const recentReviewGlide = new Glide("#recent-review-glide", {
   focusAt: "center",
   gap: 1,
 });
-
 export const liveRankingGlide = new Glide("#live-ranking-glide", {
   type: "slider",
   perView: 4,
@@ -63,17 +60,6 @@ export const liveRankingGlide = new Glide("#live-ranking-glide", {
   },
 });
 // #endregion Glide impl.
-/*
-Fancybox.show([
-  {
-    src: "https://fancyapps.com/iframe.html",
-    type: "iframe",
-    preload: false,
-    width: 600,
-    height: 300,
-  },
-]);
-*/
 
 /* -------------------- */
 // #region Gallery Types

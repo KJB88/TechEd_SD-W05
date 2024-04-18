@@ -8,6 +8,8 @@ export const ALL_TVSHOWS_WITH_REVIEW = "/tvshow/withReviews";
 export const GET_TVSHOW_BY_ID = "/tvshow/byID?showID=";
 export const GET_ALL_REVIEWS_BY_USERID = "/review/all/byUserID?userID=";
 export const GET_ALL_REVIEWS_BY_SHOWID = "/review/all/byShowID?showID=";
+export const GET_REVIEWS_AND_USERS_BY_SHOWID =
+  "/review/andUsers/byShowID?showID=";
 export const GET_REVIEW_BYID = "/review/byID?reviewID=";
 export const ADD_USER = "/user";
 export const ADD_TVSHOW = "/tvshow";

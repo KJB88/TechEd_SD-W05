@@ -31,6 +31,9 @@ const selectAllReviewsByTVShowIDAndUserID = db.prepare(
   `SELECT * FROM reviews WHERE tvID = ? AND  userID = ?`
 );
 
+const selectAllReviewsAndUsersByShowID = db.prepare(
+  `SELECT reviews.*, users.name FROM reviews INNER JOIN users ON reviews.userID = users.id AND reviews.tvID = ?`
+);
 // TV Shows
 const selectAllTVShows = db.prepare(`SELECT * FROM tv_shows`);
 const selectTVShowByID = db.prepare(`SELECT * FROM tv_shows WHERE id = ?`);
@@ -174,6 +177,9 @@ export function getAllReviewsByTVShowIDAndUserID(tvShowID, userID) {
   return selectAllReviewsByTVShowIDAndUserID.all(tvShowID, userID);
 }
 
+export function getAllReviewsAndUsersByShowID(showID) {
+  return selectAllReviewsAndUsersByShowID.all(showID);
+}
 // TV Shows
 /* Returns all TV shows */
 export function getAllTVShows() {
