@@ -26,23 +26,25 @@
   <!-- HEADER -->
   <header>
     <div>
-      <img src="logo.png" id="logo" alt="TVReviewRiot Logo" />
+      <img src="logo.png" id="logo" alt="TVReviewRiot Logo" aria-label="TVReviewRiot Logo" />
     </div>
     <div id="title">
       <h1 class="h1">TV Review Riot</h1>
       <h2 class="h2">Everyones a Critic; now its your turn!</h2>
     </div>
 
-    <nav>
+    <nav role="navigation">
       <a href="#Home">Home</a>
       <a href="#About">About</a>
       <a href="#Latest Releases">Latest Release</a>
       <a href="#Recent Reviews">Recent Reviews</a>
       <a href="#Live Rankings">Live Rankings</a>
+      <!--
       <div class="search-container">
         <input type="text" placeholder="Search..." id="search-bar">
         <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
       </div>
+    -->
     </nav>
 
   </header>
@@ -51,12 +53,12 @@
     <section class="h1-container">
       <h1>Recently Added</h1>
       <div class="display" id="recently-added-glide">
-        <button class="prev-btn">&lt;</button>
+        <button class="prev-btn" aria-label="Move carousel back">&lt;</button>
         <div data-glide-el="track" class="gallery-images glide__track">
           <ul id="recently-added" class="glide__slides">
           </ul>
         </div>
-        <button class="next-btn">&gt;</button>
+        <button class="next-btn" aria-label="Move carousel on">&gt;</button>
       </div>
     </section>
 
@@ -68,12 +70,12 @@
     <section class="h1-container">
       <h1>Recent Reviews</h1>
       <div class="display" id="recent-review-glide">
-        <button class="prev-btn">&lt;</button>
+        <button class="prev-btn" aria-label="Move carousel back">&lt;</button>
         <div data-glide-el="track" class="gallery-images glide__track">
           <ul id="recent-review" class="glide__slides">
           </ul>
         </div>
-        <button class="next-btn">&gt;</button>
+        <button class="next-btn" aria-label="Move carousel on">&gt;</button>
       </div>
     </section>
 
@@ -85,12 +87,12 @@
     <section class="h1-container">
       <h1>Live Rankings</h1>
       <div class="display" id="live-ranking-glide">
-        <button class="prev-btn">&lt;</button>
+        <button class="prev-btn" aria-label="Move carousel back">&lt;</button>
         <div data-glide-el="track" class="gallery-images glide__track">
           <ul id="live-ranking" class="glide__slides">
           </ul>
         </div>
-        <button class="next-btn">&gt;</button>
+        <button class="next-btn" aria-label="Move carousel on">&gt;</button>
       </div>
     </section>
 

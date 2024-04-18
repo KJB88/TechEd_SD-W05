@@ -65,7 +65,7 @@ const insertReview = db.prepare(
 
 // TV Shows
 const insertTVShows = db.prepare(
-  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, imgID) VALUES (?, ?, ?, ?)`
+  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, img) VALUES (?, ?, ?, ?)`
 );
 
 // #endregion INSERT

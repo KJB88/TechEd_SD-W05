@@ -63,21 +63,6 @@ export const liveRankingGlide = new Glide("#live-ranking-glide", {
   },
 });
 // #endregion Glide impl.
-
-// TODO: Store showIMGs in DB (incl. aria and alt)
-const showImgs = [
-  "fallout.webp",
-  "aot.webp",
-  "thewitcher.webp",
-  "drwho.webp",
-  "bluey.webp",
-  "firefly.webp",
-  "cowboy.webp",
-  "scrubs.webp",
-  "reddwarf.webp",
-  "mha.webp",
-];
-
 /*
 Fancybox.show([
   {
@@ -100,11 +85,7 @@ export function buildRecentlyAdded(data) {
     const listItemElement = buildListItem(); // Construct LI
 
     // Construct IMG
-    const imgElement = buildImg(
-      showImgs[data[i].imgID],
-      data[i].alt,
-      data[i].id
-    );
+    const imgElement = buildImg(data[i].img, data[i].alt, data[i].id);
 
     // Finalize
     listItemElement.append(imgElement); // Append IMG to LI
@@ -120,11 +101,7 @@ export function buildLiveRanking(data) {
   const parent = document.getElementById("live-ranking");
   for (let i = 0; i < data.length; i++) {
     const listItemElement = buildListItem(); // Construct LI
-    const imgElement = buildImg(
-      showImgs[data[i].imgID],
-      data[i].alt,
-      data[i].id
-    ); // Construct IMG
+    const imgElement = buildImg(data[i].img, data[i].alt, data[i].id); // Construct IMG
 
     const rankHeaderElement = buildRankingHeader(i);
     const likesElement = buildLike(data[i].likes);
@@ -145,11 +122,7 @@ export function buildRecentReviews(data) {
   const parent = document.getElementById("recent-review");
   for (let i = 0; i < data.length; i++) {
     const listItemElement = buildListItem(); // Construct LI
-    const imgElement = buildImg(
-      showImgs[data[i].imgID],
-      data[i].alt,
-      data[i].id
-    ); // Construct IMG
+    const imgElement = buildImg(data[i].img, data[i].alt, data[i].id); // Construct IMG
 
     // Finalize
     listItemElement.append(imgElement); // Append IMG to LI
