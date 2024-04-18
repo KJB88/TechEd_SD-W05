@@ -119,7 +119,8 @@ app.post("/tvshow", (request, response) => {
       request.body.name,
       request.body.desc,
       request.body.likes,
-      request.body.imgID
+      request.body.img,
+      request.body.alt
     )
   );
 });

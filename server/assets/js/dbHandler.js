@@ -65,7 +65,7 @@ const insertReview = db.prepare(
 
 // TV Shows
 const insertTVShows = db.prepare(
-  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, img) VALUES (?, ?, ?, ?)`
+  `INSERT OR IGNORE INTO tv_shows (name, desc, likes, img, alt) VALUES (?, ?, ?, ?, ?)`
 );
 
 // #endregion INSERT
@@ -231,8 +231,8 @@ export function addReview(content, tvShowID, userID) {
 // TV Shows
 /* Adds a TV Show to the database
 Returns all TV Shows. */
-export function addTVShow(showName, description, likes, imgID) {
-  insertTVShows.run(showName, description, likes, imgID);
+export function addTVShow(showName, description, likes, img, alt) {
+  insertTVShows.run(showName, description, likes, img, alt);
   return getAllTVShows();
 }
 
