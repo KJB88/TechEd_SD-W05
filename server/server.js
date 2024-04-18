@@ -84,7 +84,7 @@ app.get("/tvshow/all/desc", (request, response) => {
 
 // Get a TV Show by its ID
 app.get("/tvshow/byID", (request, response) => {
-  console.log(`GET /tvshow/byID?`);
+  console.log(`GET /tvshow/byID? ${request.query.showID}`);
   response.json(getTVShowByID(request.query.showID));
 });
 

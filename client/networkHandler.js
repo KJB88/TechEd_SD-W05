@@ -27,6 +27,7 @@ export async function getByID(serverTag, id, callback) {
   const response = await fetch(`${apiURL}${serverTag}${id}`);
 
   const data = await response.json();
+
   callback(data);
 }
 

@@ -1,6 +1,9 @@
 import Glide from "@glidejs/glide";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
 
 // #region Glide impl.
 export const recentAddGlide = new Glide(".recently-added-glide", {
@@ -75,9 +78,20 @@ const showImgs = [
   "mha.webp",
 ];
 
+/*
+Fancybox.show([
+  {
+    src: "https://fancyapps.com/iframe.html",
+    type: "iframe",
+    preload: false,
+    width: 600,
+    height: 300,
+  },
+]);
+*/
+
 /* -------------------- */
 // #region Gallery Types
-// TODO: Allow only a generic export and make decision on type construction based on input params
 
 // Build recently added - NOTE: hacky duplication method
 export function buildRecentlyAdded(data) {
@@ -86,7 +100,11 @@ export function buildRecentlyAdded(data) {
     const listItemElement = buildListItem(); // Construct LI
 
     // Construct IMG
-    const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt);
+    const imgElement = buildImg(
+      showImgs[data[i].imgID],
+      data[i].alt,
+      data[i].id
+    );
 
     // Finalize
     listItemElement.append(imgElement); // Append IMG to LI
@@ -101,7 +119,11 @@ export function buildLiveRanking(data) {
   const parent = document.getElementById("live-ranking");
   for (let i = 0; i < data.length; i++) {
     const listItemElement = buildListItem(); // Construct LI
-    const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt); // Construct IMG
+    const imgElement = buildImg(
+      showImgs[data[i].imgID],
+      data[i].alt,
+      data[i].id
+    ); // Construct IMG
     const rankHeaderElement = buildRankingHeader(i);
     const likesElement = buildLike(data[i].likes);
 
@@ -120,7 +142,11 @@ export function buildRecentReviews(data) {
   const parent = document.getElementById("recent-review");
   for (let i = 0; i < data.length; i++) {
     const listItemElement = buildListItem(); // Construct LI
-    const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt); // Construct IMG
+    const imgElement = buildImg(
+      showImgs[data[i].imgID],
+      data[i].alt,
+      data[i].id
+    ); // Construct IMG
 
     // Finalize
     listItemElement.append(imgElement); // Append IMG to LI
@@ -143,11 +169,24 @@ function buildListItem() {
 }
 
 // Build an IMG
-function buildImg(imgSrc, imgAlt) {
+function buildImg(imgSrc, imgAlt, showID) {
   const newImg = document.createElement("img");
   newImg.classList.add("gallery-img");
   newImg.src = imgSrc;
   newImg.alt = imgAlt;
+
+  newImg.addEventListener("click", () => {
+    Fancybox.show([
+      {
+        src: `closeup.html?showID=${showID}}`,
+        type: "iframe",
+        fitToView: false,
+        preload: false,
+        width: 800,
+        height: 600,
+      },
+    ]);
+  });
   return newImg;
 }
 

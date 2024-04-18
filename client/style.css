@@ -304,6 +304,31 @@ nav a:hover {
   box-shadow: var(--core-box-shadow-styling);
   margin: 10px;
 }
+
+#closeup-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  margin: 15px;
+}
+
+#closeup-img {
+  width: auto;
+  height: 300px;
+  object-fit: contain;
+}
+
+#closeup-header {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#closeup-desc {
+  grid-column: 2;
+  grid-row: 2;
+}
 /* Footer */
 footer {
   margin-top: 5px;
