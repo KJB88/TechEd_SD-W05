@@ -77,16 +77,16 @@ export const liveRankingGlide = new Glide(".live-ranking-glide", {
 
 // TODO: Store showIMGs in DB (incl. aria and alt)
 const showImgs = [
-  { filePath: "fallout.webp", aria: "DEFAULT" },
-  { filePath: "aot.webp", aria: "DEFAULT" },
-  { filePath: "thewitcher.webp", aria: "DEFAULT" },
-  { filePath: "drwho.webp", aria: "DEFAULT" },
-  { filePath: "bluey.webp", aria: "DEFAULT" },
-  { filePath: "firefly.webp", aria: "DEFAULT" },
-  { filePath: "cowboy.webp", aria: "DEFAULT" },
-  { filePath: "scrubs.webp", aria: "DEFAULT" },
-  { filePath: "reddwarf.webp", aria: "DEFAULT" },
-  { filePath: "mha.webp", aria: "DEFAULT" },
+  "fallout.webp",
+  "aot.webp",
+  "thewitcher.webp",
+  "drwho.webp",
+  "bluey.webp",
+  "firefly.webp",
+  "cowboy.webp",
+  "scrubs.webp",
+  "reddwarf.webp",
+  "mha.webp",
 ];
 
 /* -------------------- */
@@ -97,18 +97,14 @@ const showImgs = [
 export function buildRecentlyAdded(data) {
   const parent = document.getElementById("recently-added");
   for (let i = 0; i < data.length; i++) {
-    const listItemElement = buildListItem(data[i], parent); // Construct LI
+    const listItemElement = buildListItem(); // Construct LI
 
     // Construct IMG
-    const imgElement = buildImg(
-      showImgs[data[i].imgID],
-      data[i].alt,
-      listItemElement
-    );
+    const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt);
 
     // Finalize
-    newListElement.append(imgElement); // Append IMG to LI
-    parent.append(newlistItem); // Append LI to RecentlyAdded
+    listItemElement.append(imgElement); // Append IMG to LI
+    parent.append(listItemElement); // Append LI to RecentlyAdded
   }
 
   recentAddGlide.mount(); // Mount Glide.js carousel
@@ -118,12 +114,12 @@ export function buildRecentlyAdded(data) {
 export function buildLiveRanking(data) {
   const parent = document.getElementById("live-ranking");
   for (let i = 0; i < data.length; i++) {
-    const listItemElement = buildListItem(data[i], parent); // Construct LI
-    const imgElement = buildImg(listItemElement); // Construct IMG
+    const listItemElement = buildListItem(); // Construct LI
+    const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt); // Construct IMG
 
     // Finalize
-    newListElement.append(imgElement); // Append IMG to LI
-    parent.append(newlistItem); // Append LI to RecentlyAdded
+    listItemElement.append(imgElement); // Append IMG to LI
+    parent.append(listItemElement); // Append LI to RecentlyAdded
   }
 
   liveRankingGlide.mount(); // Mount Glide.js carousel
@@ -133,12 +129,12 @@ export function buildLiveRanking(data) {
 export function buildRecentReviews(data) {
   const parent = document.getElementById("recent-review");
   for (let i = 0; i < data.length; i++) {
-    const listItemElement = buildListItem(data[i], parent); // Construct LI
-    const imgElement = buildImg(listItemElement); // Construct IMG
+    const listItemElement = buildListItem(); // Construct LI
+    const imgElement = buildImg(showImgs[data[i].imgID], data[i].alt); // Construct IMG
 
     // Finalize
-    newListElement.append(imgElement); // Append IMG to LI
-    parent.append(newlistItem); // Append LI to RecentlyAdded
+    listItemElement.append(imgElement); // Append IMG to LI
+    parent.append(listItemElement); // Append LI to RecentlyAdded
   }
 
   recentReviewGlide.mount(); // Mount Glide.js carousel

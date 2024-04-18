@@ -11,6 +11,8 @@ import {
   getReviewByID,
   getAllTVShows,
   getTVShowByID,
+  getTVShowByMostLikes,
+  getTVShowsWithReviews,
 
   /* Posts */
   addUser,
@@ -74,16 +76,30 @@ app.get("/tvshow/all", (request, response) => {
   response.json(getAllTVShows());
 });
 
+// Get all TV shows
+app.get("/tvshow/all/desc", (request, response) => {
+  console.log(`GET /tvshow/all/desc`);
+  response.json(getTVShowByMostLikes());
+});
+
 // Get a TV Show by its ID
 app.get("/tvshow/byID", (request, response) => {
   console.log(`GET /tvshow/byID?`);
   response.json(getTVShowByID(request.query.showID));
 });
 
+// Get all TV shows sorted by number of Likes (descending)
 app.get("/tvshow/byMostLikes", (request, response) => {
   console.log(`GET /tvshow/byMostLikes`);
   response.json(getTVShowByMostLikes());
 });
+
+// Get all TV shows that have a review
+app.get("/tvshow/withReviews", (request, response) => {
+  console.log("GET /tvshow/withReviews");
+  response.json(getTVShowsWithReviews());
+});
+
 /* #endregion Get Routing*/
 /* -------------------- */
 /* #region Post Routing */

@@ -1,5 +1,14 @@
-import { getAll, ALL_TVSHOWS } from "./networkHandler.js";
-import { buildGallery, glide } from "./galleryBuilder.js";
+import {
+  getAll,
+  ALL_TVSHOWS,
+  ALL_TVSHOWS_DESCENDING,
+  ALL_TVSHOWS_WITH_REVIEW,
+} from "./networkHandler.js";
+import {
+  buildLiveRanking,
+  buildRecentlyAdded,
+  buildRecentReviews,
+} from "./galleryBuilder.js";
 
 /*
 document.addEventListener('DOMContentLoaded', function() {
@@ -25,16 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 */
-/*
-getAll(ALL_TVSHOWS, (data) => {
-  buildGallery(data, "recently-added");
-  recentAddGlide.mount(); // Remount recently added Glide
-  buildGallery(data, "recent-reviews");
-  recentReviewGlide.mount(); // Remount recent review Glide
-  buildGallery(data, "live-rankings");
-  liveRankingGlide.mount(); // Remount live rankings Glide
-});
-*/
+
+getAll(ALL_TVSHOWS, buildRecentlyAdded);
+getAll(ALL_TVSHOWS_DESCENDING, buildLiveRanking);
+getAll(ALL_TVSHOWS_WITH_REVIEW, buildRecentReviews);
+//getAll(, buildRecentReviews);
 /*
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".gallery").forEach((gallery) => {
