@@ -25,6 +25,7 @@ import {
 const app = express();
 app.use(express.json());
 app.use(cors());
+/*
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -41,7 +42,7 @@ app.use((req, res, next) => {
 app.listen(8080, function () {
   console.log("server is running on port 8080");
 });
-
+*/
 /* -------------------- */
 /* #region Get Routing*/
 
