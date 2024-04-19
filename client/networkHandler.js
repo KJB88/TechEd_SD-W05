@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:8080";
+const apiURL = "https://teched-sd-w05-server.onrender.com";
 
 export const ALL_USERS = "/user/all";
 export const GET_USER_BY_ID = "/user/byID?userID=";
