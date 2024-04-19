@@ -13,19 +13,37 @@
 </head>
 
 <body>
-    <div id="closeup-div">
-        <img id="closeup-img" src="drwho.webp" />
-        <div id="closeup-info">
-            <h1 id="closeup-header">DR WHO</h1>
-            <span id="closeup-desc">Doctor Who is pretty darn cool.</span>
+    <main id="closeup">
+        <!-- Show Info populated by remote -->
+        <div id="closeup-div">
+            <img id="closeup-img" src="drwho.webp" />
+            <div id="closeup-info">
+                <h1 id="closeup-header">DR WHO</h1>
+                <span id="closeup-desc">Doctor Who is pretty darn cool.</span>
+            </div>
         </div>
-    </div>
 
-    <div id="review-div">
-        <ul id="review-list">
+        <!-- Reviewing -->
+        <div id="review-div">
+            <ul id="review-list">
+                <!-- Reviews from the server go inside this ul-->
+            </ul>
+            <form id="review-form">
+                <!-- No time for usernames
+                <div>
 
-        </ul>
-    </div>
+                    <label for="username-input">Name:</label>
+                    <input id="username-input" placeholder="Write your name here..." type=" text" name="userName" />
+                </div>
+                -->
+                <div>
+                    <label for="review-input">Review:</label>
+                    <textarea id="review-input" placeholder="Write your review here..." name="review"></textarea>
+                </div>
+                <button id="submit-btn">Submit</button>
+            </form>
+        </div>
+    </main>
 </body>
 
 </html>

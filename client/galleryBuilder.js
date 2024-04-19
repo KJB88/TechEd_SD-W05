@@ -1,7 +1,9 @@
-import Glide from "@glidejs/glide";
-import { Fancybox } from "@fancyapps/ui";
+/* Gallery Builder */
+/* -------------------- */
+import Glide from "@glidejs/glide"; // Carousels
+import { Fancybox } from "@fancyapps/ui"; // used for iFrame popup
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-Fancybox.bind("[data-fancybox]", {});
+Fancybox.bind("[data-fancybox]", {}); // Bind to the DOM so its active
 
 // #region Glide impl.
 export const recentAddGlide = new Glide("#recently-added-glide", {

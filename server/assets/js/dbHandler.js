@@ -3,7 +3,7 @@ Allows controlled access to the database */
 /* -------------------- */
 
 //#region Setup
-
+import { generateAdjectiveNoun } from "./wordlibs.js";
 import Database from "better-sqlite3";
 const db = new Database("./assets/db/database.db");
 
@@ -63,7 +63,7 @@ const insertUser = db.prepare(`INSERT OR IGNORE INTO users (name) VALUES (?)`);
 
 // Reviews
 const insertReview = db.prepare(
-  `INSERT OR IGNORE INTO reviews (content, tvID, userID) VALUES (?, ?, ?)`
+  `INSERT INTO reviews (content, tvID, userID) VALUES (?, ?, ?)`
 );
 
 // TV Shows
@@ -223,13 +223,19 @@ export function getTVShowsWithLikesGreaterThan(threshold) {
 Returns all users. */
 export function addUser(userName) {
   insertUser.run(userName);
-  return getAllUsers();
+  return getUserByName(userName);
 }
 
 // Reviews
 /* Add a review to the database
 Returns all reviews from the given user (by user ID) on the given TV Show (by tvShow ID). */
 export function addReview(content, tvShowID, userID) {
+  if (userID === -1) {
+    const userName = generateAdjectiveNoun();
+    const data = addUser(userName);
+    userID = data[0].id;
+  }
+
   insertReview.run(content, tvShowID, userID);
   return getAllReviewsByTVShowIDAndUserID(tvShowID, userID);
 }

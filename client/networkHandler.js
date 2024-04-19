@@ -2,6 +2,7 @@ const apiURL = "http://localhost:8080";
 
 export const ALL_USERS = "/user/all";
 export const GET_USER_BY_ID = "/user/byID?userID=";
+export const GET_USER_BY_NAME = "/user/byName?userName=";
 export const ALL_TVSHOWS = "/tvshow/all";
 export const ALL_TVSHOWS_DESCENDING = "/tvshow/all/desc";
 export const ALL_TVSHOWS_WITH_REVIEW = "/tvshow/withReviews";
@@ -20,7 +21,6 @@ export async function getAll(serverTag, callback) {
   const response = await fetch(`${apiURL}${serverTag}`);
 
   const data = await response.json();
-  //console.log(data);
   callback(data);
 }
 
@@ -29,12 +29,12 @@ export async function getByID(serverTag, id, callback) {
   const response = await fetch(`${apiURL}${serverTag}${id}`);
 
   const data = await response.json();
-
   callback(data);
 }
 
 // Post
 export async function postToServer(serverTag, payload, callback) {
+  console.log(payload);
   const response = await fetch(`${apiURL}${serverTag}`, {
     method: "POST",
     body: JSON.stringify(payload),

@@ -303,6 +303,10 @@ nav a:hover {
   margin: 10px;
 }
 
+#closeup {
+  border: 20px rgba(0, 0, 0, 0.15) solid;
+  box-sizing: border-box;
+}
 #closeup-div {
   width: 100%;
   height: 100%;
@@ -313,19 +317,51 @@ nav a:hover {
 }
 
 #closeup-img {
-  width: auto;
+  width: 400px;
   height: 300px;
-  object-fit: contain;
+  object-fit: cover;
+  box-shadow: var(--core-box-shadow-styling);
+  border: var(--core-border-styling);
+  border-radius: 25px;
+  margin-bottom: 15px;
 }
 
 #closeup-header {
-  grid-column: 2;
-  grid-row: 1;
+  margin-bottom: 15px;
 }
 
-#closeup-desc {
-  grid-column: 2;
-  grid-row: 2;
+#closeup-info {
+  margin: 15px;
+}
+
+#review-div {
+  margin: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.review-entry {
+  border: 3px rgba(0, 0, 0, 0.15) solid;
+}
+#review-form {
+  margin-top: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-items: center;
+}
+
+#username-input {
+  width: 200px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+#review-input {
+  margin-top: 5px;
+  width: 580px;
+  height: 100px;
+  vertical-align: middle;
 }
 /* Footer */
 footer {
