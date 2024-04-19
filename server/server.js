@@ -38,11 +38,11 @@ app.use((req, res, next) => {
   );
   next();
 });
-
+*/
 app.listen(8080, function () {
   console.log("server is running on port 8080");
 });
-*/
+
 /* -------------------- */
 /* #region Get Routing*/
 
