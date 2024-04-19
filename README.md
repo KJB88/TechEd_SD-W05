@@ -15,13 +15,13 @@ Kev B. -
 </span>
       </li>
         <li>
-  <span>Connor L. -</span>
+  <span>Connor L. - <a href="https://github.com/MopeyHippo">Github</span>
     </li>
         <li>
   <span>Colin C. - </span>
     </li>
         <li>
-  <span>Themba .M - </span>
+  <span>Themba .M - <a href="https://github.com/thembinkosi-mahlobo">Github</span>
     </li>
     </ul>
 <section>
