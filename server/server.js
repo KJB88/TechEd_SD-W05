@@ -87,6 +87,7 @@ app.get("/review/andUsers/byShowID", (request, response) => {
 // Get all TV shows
 app.get("/tvshow/all", (request, response) => {
   console.log(`GET /tvshow/all`);
+  response.appendHeader("Access-Control-Allow-Origin: *");
   response.json(getAllTVShows());
 });
 
