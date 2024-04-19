@@ -1,7 +1,10 @@
 <div align="center">
   <h1>:mortar_board: Tech Educators' SWD Bootcamp :mortar_board:<br/>:mortar_board: Week 05 Assessment :mortar_board:</h1>
   <p>  Repository for coursework for TechEd Software Development Bootcamp - Week 05</p>
-  
+  <ul>
+    <li><b>Client</b>: <a href="https://teched-sd-w05.onrender.com/">https://teched-sd-w05.onrender.com/</a></li>
+    <li><b>Server</b>: <a href="https://teched-sd-w05-server.onrender.com">https://teched-sd-w05-server.onrender.com</a></li>
+  </ul>
   </div>
   <ul>
     <li>
