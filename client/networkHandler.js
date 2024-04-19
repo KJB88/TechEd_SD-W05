@@ -18,7 +18,11 @@ export const ADD_REVIEW = "/review";
 
 // Get ALL
 export async function getAll(serverTag, callback) {
-  const response = await fetch(`${apiURL}${serverTag}`);
+  const response = await fetch(`${apiURL}${serverTag}`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
   const data = await response.json();
   callback(data);
@@ -26,7 +30,11 @@ export async function getAll(serverTag, callback) {
 
 // Get by ID
 export async function getByID(serverTag, id, callback) {
-  const response = await fetch(`${apiURL}${serverTag}${id}`);
+  const response = await fetch(`${apiURL}${serverTag}${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
   const data = await response.json();
   callback(data);
