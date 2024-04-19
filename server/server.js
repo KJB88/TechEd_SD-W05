@@ -19,6 +19,7 @@ import {
   addTVShow,
   addReview,
   getAllReviewsAndUsersByShowID,
+  getUserByName,
 } from "./assets/js/dbHandler.js";
 
 const app = express();
@@ -49,6 +50,12 @@ app.get("/user/all", (request, response) => {
 app.get("/user/byID", (request, response) => {
   console.log(`GET /user/byID?`);
   response.json(getUserByID(request.query.userID));
+});
+
+// Get user by Name
+app.get("/user/byName", (request, response) => {
+  console.log(`GET /user/byName?`);
+  response.json(getUserByName(request.query.userName));
 });
 
 // Reviews
@@ -114,8 +121,8 @@ app.get("/tvshow/withReviews", (request, response) => {
 // Add new user
 app.post("/user", (request, response) => {
   console.log(`POST /user`);
-  console.log(request.body.name);
-  response.json(addUserUserUser(request.body.name));
+  console.log(request.body.userName);
+  response.json(addUser(request.body.userName));
 });
 
 // Add new TV Show
@@ -137,7 +144,7 @@ app.post("/review", (request, response) => {
   console.log(`POST /review`);
 
   response.json(
-    addReview(request.body.content, request.body.showID, request.body.userID)
+    addReview(request.body.review, request.body.showID, request.body.userID)
   );
 });
 
