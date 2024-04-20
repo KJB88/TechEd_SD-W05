@@ -3,27 +3,38 @@
   <p>  Repository for coursework for TechEd Software Development Bootcamp - Week 05</p>
     <p><b>Static Site (Client)</b>: <a href="https://teched-sd-w05.onrender.com/">https://teched-sd-w05.onrender.com/</a></p>
     <p><b>Web Service (Server)</b>: <a href="https://teched-sd-w05-server.onrender.com">https://teched-sd-w05-server.onrender.com</a></p>
-  </div>
-  <ul>
-    <li>
+</div>
+<ul>
+  <li>
     <span>
-Kev B. -
-    <a href="http://www.LinkedIn.com/in/kevin-barr1988">LinkedIn</a> |
-    <a href="http://kjb88.github.io">Website</a> |
-    <a href="mailto:kevinbarr.business@gmail.com">Email</a> |
-    <a href="https://github.com/KJB88">Github</a>
-</span>
-      </li>
-        <li>
-  <span>Connor L. - <a href="https://github.com/MopeyHippo">Github</span>
-    </li>
-        <li>
-  <span>Colin C. - </span>
-    </li>
-        <li>
-  <span>Themba .M - <a href="https://github.com/thembinkosi-mahlobo">Github</span>
-    </li>
-    </ul>
+      Kev B. -
+      <a href="http://www.LinkedIn.com/in/kevin-barr1988">LinkedIn</a> |
+      <a href="http://kjb88.github.io">Website</a> |
+      <a href="mailto:kevinbarr.business@gmail.com">Email</a> |
+      <a href="https://github.com/KJB88">Github</a>
+    </span>
+  </li>
+  <li>
+    <span>
+      Connor L. - 
+      <a href="https://github.com/MopeyHippo">Github</a>
+    </span>
+  </li>
+  <li>
+    <span>
+      Colin C. - 
+      <a href="https://www.linkedin.com/in/colin-carter-b638818/">LinkedIn</a> |
+      <a href="http://colincarteruxhero.squarespace.com/">Portfolio</a> |
+      <a href="https://github.com/Vanblerk666">Github</a>
+    </span>
+  </li>
+  <li>
+    <span>
+      Themba .M - 
+      <a href="https://github.com/thembinkosi-mahlobo">Github</a>
+      </span>
+  </li>
+</ul>
 <section>
 <h2>📋 Project Outline</h2>
 <p>As a group of fine, fine gentlemen; design and build a web application that utilises a snazzy and responsive, yet accessible, front-end webpage. The back-end must consider of a node.js server and SQLite database that can handle requests (GET, POST, DEL, PUT) from the client to insert, update or remove records from the database.</p>
